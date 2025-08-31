@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Kahraman Koştaş - Bilgisayar Bilimci</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #ffffff 0%, #ffeaea 100%);
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #dc143c 0%, #b91c3c 100%);
+            color: white;
+            padding: 40px 0;
+            box-shadow: 0 5px 15px rgba(220, 20, 60, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(255, 255, 255, 0.03) 0px,
+                rgba(255, 255, 255, 0.03) 1px,
+                transparent 1px,
+                transparent 20px
+            );
+            animation: slide 20s linear infinite;
+        }
+
+        @keyframes slide {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+
+        .hero-text h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .hero-text .location {
+            font-size: 1em;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            background: #dc143c;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(220, 20, 60, 0.3);
+        }
+
+        /* Main Content */
+        main {
+            padding: 40px 0;
+        }
+
+        .section {
+            background: white;
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border-left: 5px solid #dc143c;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .section h2 {
+            color: #dc143c;
+            font-size: 2em;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section h2::before {
+            content: '';
+            width: 40px;
+            height: 4px;
+            background: linear-gradient(to right, #dc143c, #ff6b8a);
+            border-radius: 2px;
+        }
+
+        /* Education & Experience Items */
+        .edu-item, .exp-item {
+            background: #f8f8f8;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border-left: 4px solid #dc143c;
+            transition: all 0.3s ease;
+        }
+
+        .edu-item:hover, .exp-item:hover {
+            background: #fff5f5;
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(220, 20, 60, 0.1);
+        }
+
+        .edu-item h3, .exp-item h3 {
+            color: #dc143c;
+            font-size: 1.3em;
+            margin-bottom: 8px;
+        }
+
+        .edu-item .institution, .exp-item .company {
+            color: #666;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .edu-item .period, .exp-item .period {
+            color: #888;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-category {
+            background: #f8f8f8;
+            padding: 25px;
+            border-radius: 10px;
+            border-top: 4px solid #dc143c;
+        }
+
+        .skill-category h4 {
+            color: #dc143c;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #dc143c, #ff6b8a);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.05);
+        }
+
+        /* Publications */
+        .publication {
+            background: #f8f8f8;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 4px solid #dc143c;
+            transition: all 0.3s ease;
+        }
+
+        .publication:hover {
+            background: #fff5f5;
+            transform: translateX(5px);
+        }
+
+        .publication-title {
+            color: #dc143c;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .publication-details {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .publication-badge {
+            display: inline-block;
+            background: #dc143c;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin-left: 10px;
+        }
+
+        /* Contact Links */
+        .contact-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .contact-link {
+            background: linear-gradient(135deg, #dc143c, #ff6b8a);
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(220, 20, 60, 0.3);
+        }
+
+        .contact-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(220, 20, 60, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .section {
+                padding: 25px;
+                margin: 20px 0;
+            }
+            
+            .hero-text h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img src="kahraman_kostas.jpeg" alt="Dr. Kahraman Koştaş" class="profile-image" onerror="this.style.display='none'">
+                <div class="hero-text">
+                    <h1>Dr. Kahraman Koştaş</h1>
+                    <div class="subtitle">PHD IN COMPUTER SCIENCE</div>
+                    <div class="location">📍 Ankara, Türkiye</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">Hakkımda</a></li>
+            <li><a href="#education">Eğitim</a></li>
+            <li><a href="#experience">Deneyim</a></li>
+            <li><a href="#skills">Yetenekler</a></li>
+            <li><a href="#publications">Yayınlar</a></li>
+            <li><a href="#contact">İletişim</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section id="about" class="section">
+            <h2>Hakkımda</h2>
+            <p style="font-size: 1.1em; line-height: 1.8; color: #555;">
+                Bilgisayar Bilimleri alanında doktora derecesine sahip, IoT güvenliği ve makine öğrenmesi konularında uzmanlaşmış bir araştırmacıyım. Heriot-Watt Üniversitesi'nde tamamladığım doktora çalışmamda, IoT ağlarında cihaz tanımlama ve saldırı tespiti problemlerini çözmek için davranış tabanlı makine öğrenmesi yöntemleri geliştirdim. Şu anda T.C. Millî Eğitim Bakanlığı'nda Millî Eğitim Uzmanı olarak görev yapmaktayım.
+            </p>
+        </section>
+
+        <section id="education" class="section">
+            <h2>Eğitim</h2>
+            
+            <div class="edu-item">
+                <h3>Bilgisayar Bilimleri Doktora Programı</h3>
+                <div class="institution">Heriot-Watt Üniversitesi, Edinburgh, Birleşik Krallık</div>
+                <div class="period">2019 - 2024</div>
+                <p><strong>Tez Başlığı:</strong> Makine Öğrenmesi ile Davranış Tabanlı IoT Güvenliği</p>
+                <p>IoT ağlarında cihaz tanımlama ve saldırı tespiti problemlerini, ağ davranışlarını gözlemleyerek klasik makine öğrenmesi ve derin öğrenme yöntemleri ile çözmeye odaklandım.</p>
+            </div>
+
+            <div class="edu-item">
+                <h3>Bilgisayar Ağları ve Güvenliği Yüksek Lisans (Üstün Başarı ile)</h3>
+                <div class="institution">Essex Üniversitesi, Colchester, Birleşik Krallık</div>
+                <div class="period">2017 - 2018</div>
+                <p><strong>Tez Başlığı:</strong> Makine Öğrenmesi Kullanarak Ağlarda Anomali Tespiti</p>
+            </div>
+
+            <div class="edu-item">
+                <h3>Türk Dili ve Edebiyatı Lisans (GPA: 3.41)</h3>
+                <div class="institution">Anadolu Üniversitesi, Eskişehir, Türkiye</div>
+                <div class="period">2012 - 2015</div>
+            </div>
+
+            <div class="edu-item">
+                <h3>Bilgisayar ve Öğretim Teknolojileri Eğitimi Lisans (GPA: 74.74)</h3>
+                <div class="institution">Marmara Üniversitesi, İstanbul, Türkiye</div>
+                <div class="period">2005 - 2009</div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <h2>Deneyim</h2>
+
+            <div class="exp-item">
+                <h3>Millî Eğitim Uzmanı</h3>
+                <div class="company">T.C. Millî Eğitim Bakanlığı, Ankara, Türkiye</div>
+                <div class="period">Eylül 2024 - Devam ediyor</div>
+                <p>Yurt dışında yaşayan öğrencilere yönelik eğitim uygulamaları geliştirilmesi.</p>
+            </div>
+
+            <div class="exp-item">
+                <h3>Araştırma Stajyeri</h3>
+                <div class="company">Huawei UK Edinburgh Ar-Ge, Edinburgh, Birleşik Krallık</div>
+                <div class="period">Şubat 2022 - Ağustos 2022</div>
+                <ul>
+                    <li>Makine öğrenmesi yöntemleriyle kapalı alan konumlandırma problemlerine çözümler geliştirilmesi</li>
+                    <li>WiFi parmak izi yöntemiyle mesafe tahmini yapılması</li>
+                    <li>WiFi mesafeleri kullanılarak topluluk tespiti yapılması</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <h3>Doktora Adayı / Araştırma Görevlisi</h3>
+                <div class="company">Heriot-Watt Üniversitesi, Edinburgh, Birleşik Krallık</div>
+                <div class="period">Ekim 2019 - Ocak 2021</div>
+                <ul>
+                    <li>Veri İletişimi ve Ağlar dersi asistanlık ve laboratuvar yürütücülüğü</li>
+                    <li>Bilgisayar Ağ Güvenliği dersi asistanlık ve laboratuvar yürütücülüğü</li>
+                    <li>İleri Ağ Güvenliği dersi asistanlık ve laboratuvar yürütücülüğü</li>
+                    <li>Yazılım Geliştirme 1 (Java) dersi asistanlık ve laboratuvar yürütücülüğü</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <h3>Öğretmen Eğitmeni</h3>
+                <div class="company">T.C. Millî Eğitim Bakanlığı, Manisa, Türkiye</div>
+                <div class="period">Eylül 2013 - Ocak 2016</div>
+                <ul>
+                    <li>Etkileşimli tahta ve yazılımlarının öğretmenlere tanıtılması</li>
+                    <li>Ağ teknolojileri ve ağ güvenliği konularında öğretmen eğitimi</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <h3>Bilgisayar Öğretmeni ve Teknoloji Danışmanı</h3>
+                <div class="company">T.C. Millî Eğitim Bakanlığı, Manisa, Türkiye</div>
+                <div class="period">Eylül 2009 - Ocak 2016</div>
+                <ul>
+                    <li>Bilgisayar temelli müfredatın geliştirilmesi ve uygulanması</li>
+                    <li>Öğrencilere bilgisayar projeleri verilmesi ve değerlendirme</li>
+                    <li>Bilgisayar temelleri ve programlama dili eğitimi</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <h2>Yetenekler</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Programlama Dilleri</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">LaTeX</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Julia</span>
+                        <span class="skill-tag">R</span>
+                        <span class="skill-tag">C/C++</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Çatılar & Kütüphaneler</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">Jupyter</span>
+                        <span class="skill-tag">NLTK</span>
+                        <span class="skill-tag">Scapy</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Analitik Araçlar</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">SAS Viya</span>
+                        <span class="skill-tag">SAS Studio</span>
+                        <span class="skill-tag">SAS Visual Analytics</span>
+                        <span class="skill-tag">Model Studio</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Diller</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Türkçe (Ana Dil)</span>
+                        <span class="skill-tag">İngilizce (İleri)</span>
+                        <span class="skill-tag">Arapça (Başlangıç)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications" class="section">
+            <h2>Seçili Yayınlar</h2>
+            
+            <div class="publication">
+                <div class="publication-title">IoTGeM: Davranış Tabanlı IoT Saldırı Tespiti İçin Genellenebilir Modeller</div>
+                <div class="publication-details">
+                    Kahraman Kostas, Mike Just ve Michael A. Lones. Computer Networks Journal, 2025
+                    <span class="publication-badge">Q1</span>
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="publication-title">GeMID: IoT Ağlarında Cihaz Tanımlama İçin Genellenebilir Modeller</div>
+                <div class="publication-details">
+                    Kahraman Kostas, Rabia Yasa Kostas, Mike Just ve Michael A. Lones. Internet of Things Journal
+                    <span class="publication-badge">Q1</span>
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="publication-title">IoTDevID: IoT İçin Davranış Tabanlı Cihaz Tanımlama Yöntemi</div>
+                <div class="publication-details">
+                    Kahraman Kostas, Mike Just ve Michael A. Lones. IEEE Internet of Things Journal 9.23 (2022): 23741-23749
+                    <span class="publication-badge">Q1</span>
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="publication-title">Makine Öğrenimi ile WiFi Tabanlı Mesafe Tahmini</div>
+                <div class="publication-details">
+                    Kahraman Kostas, Rabia Yasa Kostas, Francisco Zampella ve Firas Alsehly. 2022 IEEE 12th International Conference on Indoor Positioning and Indoor Navigation (IPIN)
+                    <span class="publication-badge">Top-tier</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>İletişim</h2>
+            <div class="contact-links">
+                <a href="mailto:kahramankostas@gmail.com" class="contact-link">📧 E-posta</a>
+                <a href="https://kahramankostas.github.io" class="contact-link">🌐 Web Sitesi</a>
+                <a href="https://github.com/kahramankostas" class="contact-link">💻 GitHub</a>
+                <a href="https://scholar.google.com/citations?user=kkostas" class="contact-link">🎓 Google Scholar</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Dr. Kahraman Koştaş. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Add scroll effect to sections
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
