@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+{% from "_macros.html" import pub_item with context %}
+{% block main %}
+<section class="hero">
+  <canvas class="hero-graph" aria-hidden="true"></canvas>
+  <div class="wrap hero-inner">
+    <h1 class="acrostic"><span class="sr-only">KOSTAS Lab: </span>
+      <span class="ac-row" style="--i:0"><b>K</b>nowledge-</span>
+      <span class="ac-row" style="--i:1"><b>O</b>riented</span>
+      <span class="ac-row" style="--i:2"><b>S</b>ystems for</span>
+      <span class="ac-row" style="--i:3"><b>T</b>echnology,</span>
+      <span class="ac-row" style="--i:4"><b>A</b>I and</span>
+      <span class="ac-row" style="--i:5"><b>S</b>cience</span>
+    </h1>
+    <div class="hero-side">
+      <p class="hero-lede">{{ t(site.tagline) }}</p>
+      <p class="hero-actions">
+        <a class="btn btn-primary" href="{{ url('publications') }}">{{ s('hero_cta_pubs') }}</a>
+        <a class="btn" href="#people">{{ s('hero_cta_people') }}</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section about" aria-labelledby="about-h">
+  <div class="wrap about-grid">
+    <h2 id="about-h" class="h2">{{ s('about_h') }}</h2>
+    <div class="prose">
+      {% for para in t(site.about) %}<p>{{ para }}</p>{% endfor %}
+      <p class="context-note">{{ t(site.context_note) }}</p>
+      <p class="independence">{{ t(site.independence) }}</p>
+    </div>
+    <dl class="facts">
+      <div><dt>{{ stats.pubs }}</dt><dd>{{ s('stat_pubs') }}</dd></div>
+      <div><dt>{{ stats.q1 }}</dt><dd>{{ s('stat_q1') }}</dd></div>
+      <div><dt>{{ stats.code }}</dt><dd>{{ s('stat_code') }}</dd></div>
+      <div><dt>{{ stats.founded }}</dt><dd>{{ s('stat_founded') }}</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="section" id="research" aria-labelledby="research-h">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="research-h" class="h2">{{ s('research_h') }}</h2>
+      <p class="lead">{{ s('research_lead') }}</p>
+    </header>
+    <ul class="themes">
+      {% for r in research %}
+      <li class="theme theme-{{ r.topic }}">
+        <h3>{{ t(r.title) }}</h3>
+        <p>{{ t(r.text) }}</p>
+        <p class="kw">{{ t(r.keywords) | join(', ') }}</p>
+        <a class="theme-count" href="{{ url('publications') }}?topic={{ r.topic }}">{{ s('paper_1') if r.count == 1 else s('papers_n').format(n=r.count) }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section people-sec" id="people" aria-labelledby="people-h">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="people-h" class="h2">{{ s('people_h') }}</h2>
+      <p class="lead">{{ s('people_lead') }}</p>
+    </header>
+    <div class="people">
+      {% for p in people %}
+      <article class="person-card">
+        <a href="{{ url('person:' ~ p.id) }}" class="person-photo" tabindex="-1" aria-hidden="true">
+          <picture>
+            <source srcset="/assets/img/{{ p.slug }}.webp" type="image/webp">
+            <img src="/assets/img/{{ p.slug }}.jpg" alt="" width="640" height="800" loading="lazy">
+          </picture>
+        </a>
+        <div class="person-body">
+          <h3><a href="{{ url('person:' ~ p.id) }}">{{ p.honorific }} {{ t(p.name) }}</a></h3>
+          <p class="role">{{ t(p.role) }}</p>
+          <p>{{ t(p.short) }}</p>
+          <p class="pos">{{ t(p.position) }}</p>
+          <a class="more" href="{{ url('person:' ~ p.id) }}">{{ s('view_profile') }}</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="publications" aria-labelledby="pubs-h">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="pubs-h" class="h2">{{ s('selected_pubs') }}</h2>
+      <a class="more" href="{{ url('publications') }}">{{ s('all_pubs') }} ({{ stats.pubs }})</a>
+    </header>
+    <ol class="pubs">
+      {% for p in pubs if p.featured %}{{ pub_item(p, show_year=true) }}{% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="projects" aria-labelledby="projects-h">
+  <div class="wrap">
+    <header class="section-head"><h2 id="projects-h" class="h2">{{ s('projects_h') }}</h2><p class="lead">{{ s('projects_lead') }}</p></header>
+    <ul class="projects">
+      {% for pr in projects %}
+      <li class="project">
+        <p class="project-kind">{{ s('kind_' ~ pr.kind) }}{% if pr.funder %}, {{ pr.funder }}{% endif %}</p>{% if pr.origin %}<p class="project-origin"><span class="origin origin-{{ pr.origin }}" title="{{ s('origin_title') }}">{{ t(site.origins[pr.origin].label) }}</span></p>{% endif %}
+        <h3>{{ pr.name }}</h3>
+        <p>{{ t(pr.text) }}</p>
+        {% if pr.links %}<p class="project-links">{% for label, href in pr.links.items() %}<a class="chip" href="{{ href }}" rel="noopener">{{ label }}</a>{% endfor %}</p>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="news" aria-labelledby="news-h">
+  <div class="wrap news-grid">
+    <div><h2 id="news-h" class="h2">{{ s('news_h') }}</h2><p class="news-lead">{{ s('news_lead') }}</p></div>
+    <ol class="timeline">
+      {% for n in news %}
+      <li><time datetime="{{ n.date }}">{{ news_date(n.date) }}</time>
+        <p>{% if n.link %}<a href="{{ n.link }}" rel="noopener">{{ t(n.text) }}</a>{% else %}{{ t(n.text) }}{% endif %}</p></li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section collab" id="collaborators" aria-labelledby="collab-h">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="collab-h" class="h2">{{ s('collab_h') }}</h2>
+      <p class="lead">{{ s('collab_lead') }}</p>
+    </header>
+    <ul class="collab-list">
+      {% for c in collaborators %}
+      <li>
+        <h3>{{ t(c.institution) }}</h3>
+        <p class="collab-context">{{ t(c.context) }}</p>
+        <p class="collab-people">{% for pp in c.people %}{% if pp.url %}<a href="{{ pp.url }}" rel="noopener">{{ pp.name }}</a>{% else %}{{ pp.name }}{% endif %}{% if pp.role %} <span class="collab-role">({{ t(pp.role) }})</span>{% endif %}{% if not loop.last %}, {% endif %}{% endfor %}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section contact" id="contact" aria-labelledby="contact-h">
+  <div class="wrap contact-grid">
+    <div>
+      <h2 id="contact-h" class="h2">{{ s('contact_h') }}</h2>
+      <p class="lead">{{ t(site.collaborate) }}</p>
+    </div>
+    <ul class="contact-list">
+      {% for p in people %}
+      <li>
+        <span class="c-name">{{ p.honorific }} {{ t(p.name) }}</span>
+        <a href="mailto:{{ p.email }}">{{ p.email }}</a>
+        <button type="button" class="copy-btn small" data-copy="{{ p.email }}" data-copy-label="{{ s('copied') }}">{{ s('copy') }}</button>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}<script src="/assets/js/graph.js" defer></script>{% endblock %}

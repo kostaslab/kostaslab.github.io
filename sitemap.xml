@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://kostaslab.github.io/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kostaslab.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://kostaslab.github.io/tr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kostaslab.github.io/"/>
+  </url>
+  <url>
+    <loc>https://kostaslab.github.io/tr/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kostaslab.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://kostaslab.github.io/tr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kostaslab.github.io/"/>
+  </url>
+  <url>
+    <loc>https://kostaslab.github.io/publications/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kostaslab.github.io/publications/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://kostaslab.github.io/tr/yayinlar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kostaslab.github.io/publications/"/>
+  </url>
+  <url>
+    <loc>https://kostaslab.github.io/tr/yayinlar/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kostaslab.github.io/publications/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://kostaslab.github.io/tr/yayinlar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kostaslab.github.io/publications/"/>
+  </url>
+  <url>
+    <loc>https://kostaslab.github.io/people/kahraman-kostas/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kostaslab.github.io/people/kahraman-kostas/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://kostaslab.github.io/tr/ekip/kahraman-kostas/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kostaslab.github.io/people/kahraman-kostas/"/>
+  </url>
+  <url>
+    <loc>https://kostaslab.github.io/tr/ekip/kahraman-kostas/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kostaslab.github.io/people/kahraman-kostas/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://kostaslab.github.io/tr/ekip/kahraman-kostas/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kostaslab.github.io/people/kahraman-kostas/"/>
+  </url>
+  <url>
+    <loc>https://kostaslab.github.io/people/rabia-yasa-kostas/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kostaslab.github.io/people/rabia-yasa-kostas/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://kostaslab.github.io/tr/ekip/rabia-yasa-kostas/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kostaslab.github.io/people/rabia-yasa-kostas/"/>
+  </url>
+  <url>
+    <loc>https://kostaslab.github.io/tr/ekip/rabia-yasa-kostas/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kostaslab.github.io/people/rabia-yasa-kostas/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://kostaslab.github.io/tr/ekip/rabia-yasa-kostas/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kostaslab.github.io/people/rabia-yasa-kostas/"/>
+  </url>
+</urlset>

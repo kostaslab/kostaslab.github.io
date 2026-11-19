@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KOSTAS Lab — Teknoloji, Yapay Zekâ ve Bilim için Bilgi Odaklı Sistemler</title>
+<meta name="description" content="KOSTAS Lab: IoT güvenliği için genellenebilir makine öğrenmesi, Türkçe doğal dil işleme, çevrimdışı LLM&#39;ler, sözel akıcılık ve iç mekân konumlandırma."><meta name="robots" content="index, follow, max-image-preview:large"><link rel="canonical" href="https://kostaslab.github.io/tr/">
+<link rel="alternate" hreflang="en" href="https://kostaslab.github.io/">
+<link rel="alternate" hreflang="tr" href="https://kostaslab.github.io/tr/">
+<link rel="alternate" hreflang="x-default" href="https://kostaslab.github.io/">
+<meta name="author" content="KOSTAS Lab">
+<meta name="theme-color" content="#17305f" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c1628" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+
+<meta property="og:site_name" content="KOSTAS Lab">
+<meta property="og:type" content="website">
+<meta property="og:title" content="KOSTAS Lab — Teknoloji, Yapay Zekâ ve Bilim için Bilgi Odaklı Sistemler">
+<meta property="og:description" content="KOSTAS Lab: IoT güvenliği için genellenebilir makine öğrenmesi, Türkçe doğal dil işleme, çevrimdışı LLM&#39;ler, sözel akıcılık ve iç mekân konumlandırma."><meta property="og:url" content="https://kostaslab.github.io/tr/">
+<meta property="og:image" content="https://kostaslab.github.io/assets/img/og-image.png">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:locale:alternate" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KOSTAS Lab — Teknoloji, Yapay Zekâ ve Bilim için Bilgi Odaklı Sistemler">
+<meta name="twitter:description" content="KOSTAS Lab: IoT güvenliği için genellenebilir makine öğrenmesi, Türkçe doğal dil işleme, çevrimdışı LLM&#39;ler, sözel akıcılık ve iç mekân konumlandırma."><meta name="twitter:image" content="https://kostaslab.github.io/assets/img/og-image.png">
+
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css">
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "ResearchOrganization",
+   "@id": "https://kostaslab.github.io/#org",
+   "name": "KOSTAS Lab",
+   "alternateName": [
+    "Knowledge-Oriented Systems for Technology, AI and Science",
+    "KOSTAS Laboratuvarı",
+    "Kostas Lab"
+   ],
+   "url": "https://kostaslab.github.io/",
+   "logo": "https://kostaslab.github.io/assets/img/icon-512.png",
+   "image": "https://kostaslab.github.io/assets/img/og-image.png",
+   "description": "KOSTAS Lab (Knowledge-Oriented Systems for Technology, AI and Science), Dr. Kahraman Koştaş ve Dr. Rabia Yaşa Koştaş'ın yürüttüğü; IoT güvenliği için genellenebilir makine öğrenmesi, Türkçe doğal dil işleme ve çevrimdışı büyük dil modelleri, bilişsel dil analitiği ve iç mekân konumlandırma üzerine çalışan bir araştırma laboratuvarıdır. KOSTAS Lab, iki kurucusunun yürüttüğü bağımsız bir araştırma grubudur. Tüzel kişiliği yoktur ve herhangi bir üniversitenin ya da kamu kurumunun birimi değildir; üyelerin kurumsal bağlantıları profillerinde yer alır.",
+   "foundingDate": "2026",
+   "email": "kahramankostas@gmail.com",
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Gümüşhane",
+    "addressCountry": "TR"
+   },
+   "founder": [
+    {
+     "@id": "https://kostaslab.github.io/people/kahraman-kostas/#person"
+    },
+    {
+     "@id": "https://kostaslab.github.io/people/rabia-yasa-kostas/#person"
+    }
+   ],
+   "member": [
+    {
+     "@id": "https://kostaslab.github.io/people/kahraman-kostas/#person"
+    },
+    {
+     "@id": "https://kostaslab.github.io/people/rabia-yasa-kostas/#person"
+    }
+   ],
+   "knowsAbout": [
+    "Generalisable IoT security",
+    "Turkish NLP and offline LLMs",
+    "Cognitive language analytics",
+    "Indoor positioning",
+    "AI for materials and nanobiotechnology"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://kostaslab.github.io/#website",
+   "url": "https://kostaslab.github.io/",
+   "name": "KOSTAS Lab",
+   "inLanguage": [
+    "en",
+    "tr"
+   ],
+   "publisher": {
+    "@id": "https://kostaslab.github.io/#org"
+   }
+  },
+  {
+   "@type": "Person",
+   "@id": "https://kostaslab.github.io/people/kahraman-kostas/#person",
+   "name": "Kahraman Koştaş",
+   "alternateName": [
+    "Kahraman Kostas",
+    "Kahraman Kostaş"
+   ],
+   "honorificPrefix": "Dr.",
+   "jobTitle": "Milli Eğitim Uzmanı (YYEGM, Millî Eğitim Bakanlığı) ve Gümüşhane Üniversitesi'nde öğretim elemanı",
+   "url": "https://kostaslab.github.io/tr/ekip/kahraman-kostas/",
+   "image": "https://kostaslab.github.io/assets/img/kahraman-kostas.jpg",
+   "email": "mailto:kahramankostas@gmail.com",
+   "sameAs": [
+    "https://scholar.google.com/citations?user=XjOogr0AAAAJ",
+    "https://orcid.org/0000-0002-4696-1857",
+    "https://github.com/kahramankostas",
+    "https://www.linkedin.com/in/kkostas/",
+    "https://www.researchgate.net/profile/Kahraman-Kostas",
+    "https://www.webofscience.com/wos/author/record/JZT-7728-2024",
+    "https://www.scopus.com/authid/detail.uri?authorId=57222271214",
+    "https://x.com/kkostas",
+    "https://kahramankostas.github.io/"
+   ],
+   "knowsAbout": [
+    "IoT security",
+    "Device identification",
+    "Generalisable machine learning",
+    "Network forensics",
+    "Explainable AI",
+    "Indoor positioning",
+    "Offline LLMs"
+   ],
+   "alumniOf": [
+    {
+     "@type": "CollegeOrUniversity",
+     "name": "Heriot-Watt University"
+    },
+    {
+     "@type": "CollegeOrUniversity",
+     "name": "University of Essex"
+    },
+    {
+     "@type": "CollegeOrUniversity",
+     "name": "Marmara University"
+    }
+   ],
+   "worksFor": [
+    {
+     "@type": "Organization",
+     "name": "Gümüşhane University"
+    },
+    {
+     "@type": "Organization",
+     "name": "Ministry of National Education (Türkiye)"
+    }
+   ],
+   "memberOf": {
+    "@id": "https://kostaslab.github.io/#org"
+   }
+  },
+  {
+   "@type": "Person",
+   "@id": "https://kostaslab.github.io/people/rabia-yasa-kostas/#person",
+   "name": "Rabia Yaşa Koştaş",
+   "alternateName": [
+    "Rabia Yasa Kostas",
+    "Rabia Yaşa Kostas",
+    "Rabia Yasa"
+   ],
+   "honorificPrefix": "Dr.",
+   "jobTitle": "Öğretim Görevlisi, Gümüşhane Üniversitesi Gümüşhane Meslek Yüksekokulu, Bilgisayar Teknolojileri Bölümü",
+   "url": "https://kostaslab.github.io/tr/ekip/rabia-yasa-kostas/",
+   "image": "https://kostaslab.github.io/assets/img/rabia-yasa-kostas.jpg",
+   "email": "mailto:rabia.yasa@gumushane.edu.tr",
+   "sameAs": [
+    "https://orcid.org/0000-0003-4023-1850",
+    "https://github.com/rykostas",
+    "https://linkedin.com/in/rykostas",
+    "https://rabiayasakostas.com/"
+   ],
+   "knowsAbout": [
+    "Semantic analysis",
+    "Natural language processing",
+    "Machine learning",
+    "Explainable AI",
+    "Cognitive psychology",
+    "Verbal fluency",
+    "Human-computer interaction"
+   ],
+   "alumniOf": [
+    {
+     "@type": "CollegeOrUniversity",
+     "name": "University of Edinburgh"
+    },
+    {
+     "@type": "CollegeOrUniversity",
+     "name": "University of Essex"
+    },
+    {
+     "@type": "CollegeOrUniversity",
+     "name": "Marmara University"
+    }
+   ],
+   "worksFor": [
+    {
+     "@type": "Organization",
+     "name": "Gümüşhane University"
+    }
+   ],
+   "memberOf": {
+    "@id": "https://kostaslab.github.io/#org"
+   }
+  }
+ ]
+}</script></head>
+<body class="page-home">
+<a class="skip" href="#main">İçeriğe geç</a>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/tr/" aria-label="KOSTAS Lab — Ana sayfa">
+      <img src="/assets/img/logo.png" alt="" width="36" height="35">
+      <span>KOSTAS<b>Lab</b></span>
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menü</button>
+    <nav id="nav" class="nav" aria-label="Menü">
+      <a href="/tr/#research">Araştırma</a>
+      <a href="/tr/#people">Ekip</a>
+      <a href="/tr/yayinlar/">Yayınlar</a>
+      <a href="/tr/#projects">Projeler</a>
+      <a href="/tr/#news">Haberler</a>
+      <a href="/tr/#contact">İletişim</a>
+      <a class="lang" href="/" hreflang="en" lang="en" title="English version of this page">English</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero">
+  <canvas class="hero-graph" aria-hidden="true"></canvas>
+  <div class="wrap hero-inner">
+    <h1 class="acrostic"><span class="sr-only">KOSTAS Lab: </span>
+      <span class="ac-row" style="--i:0"><b>K</b>nowledge-</span>
+      <span class="ac-row" style="--i:1"><b>O</b>riented</span>
+      <span class="ac-row" style="--i:2"><b>S</b>ystems for</span>
+      <span class="ac-row" style="--i:3"><b>T</b>echnology,</span>
+      <span class="ac-row" style="--i:4"><b>A</b>I and</span>
+      <span class="ac-row" style="--i:5"><b>S</b>cience</span>
+    </h1>
+    <div class="hero-side">
+      <p class="hero-lede">Laboratuvar dışında da işe yarayan makine öğrenmesi geliştiren bağımsız bir araştırma grubu — IoT ağlarında, Türkçe dil verisinde ve içinde dolaştığımız binalarda.</p>
+      <p class="hero-actions">
+        <a class="btn btn-primary" href="/tr/yayinlar/">Yayınlara göz at</a>
+        <a class="btn" href="#people">Ekiple tanışın</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section about" aria-labelledby="about-h">
+  <div class="wrap about-grid">
+    <h2 id="about-h" class="h2">Ne üzerinde çalışıyoruz</h2>
+    <div class="prose">
+<p>Edinburgh&#39;da yetişip Türkiye&#39;de çalışan iki araştırmacıyız. Makine öğrenmesi sonuçlarının çoğu, üzerinde geliştirildiği veri setinde güçlü görünür ve bir sonrakinde çöker. Ortak ilgimiz genellenebilen modeller: yeni cihazlara, yeni ağlara, yeni konuşuculara ve yeni binalara taşınabilen modeller.</p><p>Kodumuzu makalelerimizle birlikte yayımlıyor, yöntemlerimizi onlar için tasarlamadığımız verilerde sınıyor ve İngilizce kadar Türkçe için de çalışan yöntemlere önem veriyoruz.</p>      <p class="context-note">KOSTAS Lab 2026&#39;da kuruldu. Burada listelenen yayın ve araçlar, üyelerin daha önce Heriot-Watt Üniversitesi, Edinburgh Üniversitesi, Huawei UK ve diğer kurumlarda ortak yazarlarıyla yaptığı çalışmalardır; her birinde çalışmanın nerede yapıldığı belirtilmiştir.</p>
+      <p class="independence">KOSTAS Lab, iki kurucusunun yürüttüğü bağımsız bir araştırma grubudur. Tüzel kişiliği yoktur ve herhangi bir üniversitenin ya da kamu kurumunun birimi değildir; üyelerin kurumsal bağlantıları profillerinde yer alır.</p>
+    </div>
+    <dl class="facts">
+      <div><dt>15</dt><dd>üyelerin yayını</dd></div>
+      <div><dt>5</dt><dd>tanesi Q1 dergilerde</dd></div>
+      <div><dt>9</dt><dd>açık kodlu çalışma</dd></div>
+      <div><dt>2026</dt><dd>KOSTAS Lab kuruldu</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="section" id="research" aria-labelledby="research-h">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="research-h" class="h2">Araştırma alanları</h2>
+      <p class="lead">Beş çalışma hattı. Çoğu, laboratuvarı kurmadan önce yaptığımız araştırmalara dayanıyor; her biri ilgili yayınlara bağlanıyor.</p>
+    </header>
+    <ul class="themes">
+      <li class="theme theme-iot">
+        <h3>Genellenebilir IoT güvenliği</h3>
+        <p>Ağ davranışından cihaz tanıma ve saldırı tespiti; eğitilmedikleri cihazlarda, veri setlerinde ve ağ koşullarında da çalışan modellerle. Kahraman&#39;ın Heriot-Watt Üniversitesi&#39;ndeki doktorasında Dr. Mike Just ve Dr. Michael A. Lones ile geliştirilen IoTDevID, IoTGeM ve GeMID üzerine kurulu.</p>
+        <p class="kw">cihaz tanıma, saldırı tespiti, öznitelik genellemesi, ağ adli bilişimi</p>
+        <a class="theme-count" href="/tr/yayinlar/?topic=iot">6 yayın</a>
+      </li>
+      <li class="theme theme-nlp">
+        <h3>Türkçe doğal dil işleme ve çevrimdışı LLM&#39;ler</h3>
+        <p>Yerelde çalışan dil modellerinin Türkçede neyi yapıp neyi yapamadığını ölçüyoruz; gündelik sorulardan mantık safsatalarını tanımaya kadar. Ortak yazarlar: Edibe Yılmaz, İnanç Feridun Canci ve Zeynep Gizem Emir Shahbazov. İlgili öğrenci çalışmaları arasında Gümüşhane Üniversitesi&#39;nde yürütülen TÜBİTAK 2209-A projesi TurkCap var.</p>
+        <p class="kw">LLM değerlendirme, akıl yürütme, safsata tespiti, görüntü altyazılama</p>
+        <a class="theme-count" href="/tr/yayinlar/?topic=nlp">3 yayın</a>
+      </li>
+      <li class="theme theme-cognition">
+        <h3>Bilişsel dil analitiği</h3>
+        <p>Semantik sözel akıcılığın hesaplamalı analizi (insanların ürettiği kelimelerdeki kümeleri ve geçişleri otomatik bulmak) ile Türkçe konuşucular için bilişsel ve klinik değerlendirmeye destek. Rabia&#39;nın Edinburgh Üniversitesi&#39;ndeki doktorasına ve Dr. Maria K. Wolters ile Dr. Sarah E. MacPherson&#39;la yapılan çalışmalara dayanıyor.</p>
+        <p class="kw">sözel akıcılık, anlamsal benzerlik, açıklanabilir yapay zekâ, insan-bilgisayar etkileşimi</p>
+        <a class="theme-count" href="/tr/yayinlar/?topic=cognition">2 yayın</a>
+      </li>
+      <li class="theme theme-positioning">
+        <h3>İç mekân konumlandırma</h3>
+        <p>GPS&#39;in çalışmadığı yerlerde yalnızca WiFi sinyalleriyle kişi ve cihaz konumlandırma. Huawei UK iç mekân konumlandırma ekibiyle WiFi mesafe kestirimi (IPIN 2022) ile başladı; kurucuların graf tabanlı kat ayrımı çalışmasıyla (IPIN 2025) sürdü.</p>
+        <p class="kw">WiFi parmak izi, graf gömmeleri, kat tespiti</p>
+        <a class="theme-count" href="/tr/yayinlar/?topic=positioning">2 yayın</a>
+      </li>
+      <li class="theme theme-materials">
+        <h3>Malzeme ve nanobiyoteknoloji için yapay zekâ</h3>
+        <p>Pinar Bozbeyoglu, Elif Esra Altuner ve Muzaffer Elmas ile nanokompozitlerin yapay zekâ destekli tasarımı, hedefli antibiyotik salımı ve yakıt kükürt giderimi üzerine disiplinler arası kitap bölümleri.</p>
+        <p class="kw">ters tasarım, nanokompozitler, antimikrobiyal direnç</p>
+        <a class="theme-count" href="/tr/yayinlar/?topic=materials">3 yayın</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section people-sec" id="people" aria-labelledby="people-h">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="people-h" class="h2">Ekip</h2>
+      <p class="lead">Laboratuvar şu an iki araştırmacıdan oluşuyor. Öğrencilere ve iş birliklerine açığız.</p>
+    </header>
+    <div class="people">
+      <article class="person-card">
+        <a href="/tr/ekip/kahraman-kostas/" class="person-photo" tabindex="-1" aria-hidden="true">
+          <picture>
+            <source srcset="/assets/img/kahraman-kostas.webp" type="image/webp">
+            <img src="/assets/img/kahraman-kostas.jpg" alt="" width="640" height="800" loading="lazy">
+          </picture>
+        </a>
+        <div class="person-body">
+          <h3><a href="/tr/ekip/kahraman-kostas/">Dr. Kahraman Koştaş</a></h3>
+          <p class="role">Kurucu ortak · Araştırmacı ve Teknik Mimar</p>
+          <p>Görmediği cihaz ve ağlarda da çalışmaya devam eden, IoT güvenliği için makine öğrenmesi modelleri geliştiriyor.</p>
+          <p class="pos">Milli Eğitim Uzmanı (YYEGM, Millî Eğitim Bakanlığı) ve Gümüşhane Üniversitesi&#39;nde öğretim elemanı</p>
+          <a class="more" href="/tr/ekip/kahraman-kostas/">Profilin tamamı</a>
+        </div>
+      </article>
+      <article class="person-card">
+        <a href="/tr/ekip/rabia-yasa-kostas/" class="person-photo" tabindex="-1" aria-hidden="true">
+          <picture>
+            <source srcset="/assets/img/rabia-yasa-kostas.webp" type="image/webp">
+            <img src="/assets/img/rabia-yasa-kostas.jpg" alt="" width="640" height="800" loading="lazy">
+          </picture>
+        </a>
+        <div class="person-body">
+          <h3><a href="/tr/ekip/rabia-yasa-kostas/">Dr. Rabia Yaşa Koştaş</a></h3>
+          <p class="role">Kurucu ortak · Öğretim Görevlisi ve Araştırmacı</p>
+          <p>İnsanların kelimeleri nasıl hatırladığını doğal dil işleme ile ölçüyor; çıkış noktası Türkçe sözel akıcılık.</p>
+          <p class="pos">Öğretim Görevlisi, Gümüşhane Üniversitesi Gümüşhane Meslek Yüksekokulu, Bilgisayar Teknolojileri Bölümü</p>
+          <a class="more" href="/tr/ekip/rabia-yasa-kostas/">Profilin tamamı</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="publications" aria-labelledby="pubs-h">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="pubs-h" class="h2">Öne çıkan yayınlar</h2>
+      <a class="more" href="/tr/yayinlar/">Tüm yayınlar (15)</a>
+    </header>
+    <ol class="pubs">
+<li class="pub" id="kostas2025gemid" data-year="2025" data-type="journal" data-members="kahraman rabia" data-topics="iot" data-origin="hw">
+  <p class="pub-meta">
+    <span class="tag tag-journal">Dergi makalesi</span>
+<span class="tag tag-q1" title="Q1">Q1</span><span class="pub-year">2025</span>    <span class="origin origin-hw" title="Çalışmanın yapıldığı yer">Heriot-Watt Üniversitesi</span>
+  </p>
+  <h3 class="pub-title"><a href="https://doi.org/10.1016/j.iot.2025.101806" rel="noopener">GeMID: Generalizable Models for IoT Device Identification</a></h3>
+  <p class="pub-authors"><a class="me" href="/tr/ekip/kahraman-kostas/">Kahraman Kostas</a>, <a class="me" href="/tr/ekip/rabia-yasa-kostas/">Rabia Yasa Kostas</a>, Mike Just, Michael A. Lones</p>
+  <p class="pub-venue">Internet of Things (Elsevier), Vol. 30</p>
+  <div class="pub-actions">
+<a class="chip" href="https://doi.org/10.1016/j.iot.2025.101806" rel="noopener">DOI</a><a class="chip" href="https://arxiv.org/abs/2411.14441" rel="noopener">arXiv</a><a class="chip" href="https://github.com/kahramankostas/GeMID" rel="noopener">Code</a>    <details class="cite">
+      <summary class="chip">Atıf</summary>
+      <div class="cite-box">
+        <pre><code>@article{kostas2025gemid,
+  title = {{GeMID: Generalizable Models for IoT Device Identification}},
+  author = {Kahraman Kostas and Rabia Yasa Kostas and Mike Just and Michael A. Lones},
+  journal = {Internet of Things (Elsevier), Vol. 30},
+  year = {2025},
+  doi = {10.1016/j.iot.2025.101806}
+}</code></pre>
+        <button type="button" class="copy-btn" data-copy-label="Kopyalandı">BibTeX&#39;i kopyala</button>
+      </div>
+    </details>
+  </div>
+</li>
+<li class="pub" id="kostas2025iotgem" data-year="2025" data-type="journal" data-members="kahraman" data-topics="iot" data-origin="hw">
+  <p class="pub-meta">
+    <span class="tag tag-journal">Dergi makalesi</span>
+<span class="tag tag-q1" title="Q1">Q1</span><span class="pub-year">2025</span>    <span class="origin origin-hw" title="Çalışmanın yapıldığı yer">Heriot-Watt Üniversitesi</span>
+  </p>
+  <h3 class="pub-title"><a href="https://doi.org/10.1016/j.comnet.2025.111550" rel="noopener">IoTGeM: Generalisable Models for Behaviour-Based IoT Attack Detection</a></h3>
+  <p class="pub-authors"><a class="me" href="/tr/ekip/kahraman-kostas/">Kahraman Kostas</a>, Mike Just, Michael A. Lones</p>
+  <p class="pub-venue">Computer Networks (Elsevier), Vol. 262</p>
+  <div class="pub-actions">
+<a class="chip" href="https://doi.org/10.1016/j.comnet.2025.111550" rel="noopener">DOI</a><a class="chip" href="https://github.com/kahramankostas/IoTGeM" rel="noopener">Code</a>    <details class="cite">
+      <summary class="chip">Atıf</summary>
+      <div class="cite-box">
+        <pre><code>@article{kostas2025iotgem,
+  title = {{IoTGeM: Generalisable Models for Behaviour-Based IoT Attack Detection}},
+  author = {Kahraman Kostas and Mike Just and Michael A. Lones},
+  journal = {Computer Networks (Elsevier), Vol. 262},
+  year = {2025},
+  doi = {10.1016/j.comnet.2025.111550}
+}</code></pre>
+        <button type="button" class="copy-btn" data-copy-label="Kopyalandı">BibTeX&#39;i kopyala</button>
+      </div>
+    </details>
+  </div>
+</li>
+<li class="pub" id="kostas2025ipf" data-year="2025" data-type="journal" data-members="kahraman" data-topics="iot" data-origin="hw">
+  <p class="pub-meta">
+    <span class="tag tag-journal">Dergi makalesi</span>
+<span class="tag tag-q1" title="Q1">Q1</span><span class="pub-year">2025</span>    <span class="origin origin-hw" title="Çalışmanın yapıldığı yer">Heriot-Watt Üniversitesi</span>
+  </p>
+  <h3 class="pub-title"><a href="https://ieeexplore.ieee.org/abstract/document/10824899" rel="noopener">Individual Packet Features are a Risk to Model Generalisation in ML-Based Intrusion Detection</a></h3>
+  <p class="pub-authors"><a class="me" href="/tr/ekip/kahraman-kostas/">Kahraman Kostas</a>, Mike Just, Michael A. Lones</p>
+  <p class="pub-venue">IEEE Networking Letters</p>
+  <div class="pub-actions">
+<a class="chip" href="https://ieeexplore.ieee.org/abstract/document/10824899" rel="noopener">IEEE Xplore</a><a class="chip" href="https://github.com/kahramankostas/IPF" rel="noopener">Code</a>    <details class="cite">
+      <summary class="chip">Atıf</summary>
+      <div class="cite-box">
+        <pre><code>@article{kostas2025ipf,
+  title = {{Individual Packet Features are a Risk to Model Generalisation in ML-Based Intrusion Detection}},
+  author = {Kahraman Kostas and Mike Just and Michael A. Lones},
+  journal = {IEEE Networking Letters},
+  year = {2025},
+  url = {https://ieeexplore.ieee.org/abstract/document/10824899}
+}</code></pre>
+        <button type="button" class="copy-btn" data-copy-label="Kopyalandı">BibTeX&#39;i kopyala</button>
+      </div>
+    </details>
+  </div>
+</li>
+<li class="pub" id="kostas2025floor" data-year="2025" data-type="conference" data-members="rabia kahraman" data-topics="positioning" data-origin="lab">
+  <p class="pub-meta">
+    <span class="tag tag-conference">Bildiri</span>
+<span class="pub-year">2025</span>    <span class="origin origin-lab" title="Çalışmanın yapıldığı yer">KOSTAS Lab</span>
+  </p>
+  <h3 class="pub-title"><a href="https://arxiv.org/abs/2505.08088" rel="noopener">Graph-Based Floor Separation Using Node Embeddings and Clustering of WiFi Trajectories</a></h3>
+  <p class="pub-authors"><a class="me" href="/tr/ekip/rabia-yasa-kostas/">Rabia Yasa Kostas</a>, <a class="me" href="/tr/ekip/kahraman-kostas/">Kahraman Kostas</a></p>
+  <p class="pub-venue">preprint</p>
+  <div class="pub-actions">
+<a class="chip" href="https://arxiv.org/abs/2505.08088" rel="noopener">arXiv</a><a class="chip" href="https://github.com/kahramankostas/IPIN2025" rel="noopener">Code</a>    <details class="cite">
+      <summary class="chip">Atıf</summary>
+      <div class="cite-box">
+        <pre><code>@inproceedings{kostas2025floor,
+  title = {{Graph-Based Floor Separation Using Node Embeddings and Clustering of WiFi Trajectories}},
+  author = {Rabia Yasa Kostas and Kahraman Kostas},
+  booktitle = {preprint},
+  year = {2025},
+  url = {https://arxiv.org/abs/2505.08088}
+}</code></pre>
+        <button type="button" class="copy-btn" data-copy-label="Kopyalandı">BibTeX&#39;i kopyala</button>
+      </div>
+    </details>
+  </div>
+</li>
+<li class="pub" id="kostas2024svf" data-year="2024" data-type="journal" data-members="rabia kahraman" data-topics="cognition nlp" data-origin="ed">
+  <p class="pub-meta">
+    <span class="tag tag-journal">Dergi makalesi</span>
+<span class="tag tag-q1" title="Q1">Q1</span><span class="pub-year">2024</span>    <span class="origin origin-ed" title="Çalışmanın yapıldığı yer">Edinburgh Üniversitesi</span>
+  </p>
+  <h3 class="pub-title"><a href="https://doi.org/10.1080/13803395.2024.2331827" rel="noopener">Semantic verbal fluency in native speakers of Turkish: A systematic review of category use, scoring metrics and normative data in healthy individuals</a></h3>
+  <p class="pub-authors"><a class="me" href="/tr/ekip/rabia-yasa-kostas/">Rabia Yasa Kostas</a>, <a class="me" href="/tr/ekip/kahraman-kostas/">Kahraman Kostas</a>, Sarah E. MacPherson, Maria K. Wolters</p>
+  <p class="pub-venue">Journal of Clinical and Experimental Neuropsychology, 46(4), 319–336</p>
+  <div class="pub-actions">
+<a class="chip" href="https://doi.org/10.1080/13803395.2024.2331827" rel="noopener">DOI</a>    <details class="cite">
+      <summary class="chip">Atıf</summary>
+      <div class="cite-box">
+        <pre><code>@article{kostas2024svf,
+  title = {{Semantic verbal fluency in native speakers of Turkish: A systematic review of category use, scoring metrics and normative data in healthy individuals}},
+  author = {Rabia Yasa Kostas and Kahraman Kostas and Sarah E. MacPherson and Maria K. Wolters},
+  journal = {Journal of Clinical and Experimental Neuropsychology, 46(4), 319–336},
+  year = {2024},
+  doi = {10.1080/13803395.2024.2331827}
+}</code></pre>
+        <button type="button" class="copy-btn" data-copy-label="Kopyalandı">BibTeX&#39;i kopyala</button>
+      </div>
+    </details>
+  </div>
+</li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="projects" aria-labelledby="projects-h">
+  <div class="wrap">
+    <header class="section-head"><h2 id="projects-h" class="h2">Projeler ve açık kaynak araçlar</h2><p class="lead">Üyelerimizin araç ve projeleri. Her birinde nerede geliştirildiği belirtilmiştir.</p></header>
+    <ul class="projects">
+      <li class="project">
+        <p class="project-kind">Açık kaynak</p><p class="project-origin"><span class="origin origin-hw" title="Çalışmanın yapıldığı yer">Heriot-Watt Üniversitesi</span></p>        <h3>IoTDevID</h3>
+        <p>Tekil paketlerden davranış tabanlı IoT cihaz tanıma; IP dışı ve düşük enerjili protokoller dahil. Kahraman&#39;ın doktorasından; Dr. Mike Just ve Dr. Michael A. Lones ile.</p>
+<p class="project-links"><a class="chip" href="https://github.com/kahramankostas/IoTDevIDv2" rel="noopener">Code</a><a class="chip" href="https://doi.org/10.1109/JIOT.2022.3191951" rel="noopener">Paper</a></p>      </li>
+      <li class="project">
+        <p class="project-kind">Açık kaynak</p><p class="project-origin"><span class="origin origin-hw" title="Çalışmanın yapıldığı yer">Heriot-Watt Üniversitesi</span></p>        <h3>IoTGeM</h3>
+        <p>Veri sızıntısı olmayan bir değerlendirme hattıyla IoT için davranış tabanlı saldırı tespiti. Dr. Mike Just ve Dr. Michael A. Lones ile.</p>
+<p class="project-links"><a class="chip" href="https://github.com/kahramankostas/IoTGeM" rel="noopener">Code</a><a class="chip" href="https://doi.org/10.1016/j.comnet.2025.111550" rel="noopener">Paper</a></p>      </li>
+      <li class="project">
+        <p class="project-kind">Açık kaynak</p><p class="project-origin"><span class="origin origin-hw" title="Çalışmanın yapıldığı yer">Heriot-Watt Üniversitesi</span></p>        <h3>GeMID</h3>
+        <p>Yalnızca ayrılmış test verisinde değil, görülmemiş ağlarda da genellenebilen cihaz tanıma modelleri. Dr. Mike Just ve Dr. Michael A. Lones ile.</p>
+<p class="project-links"><a class="chip" href="https://github.com/kahramankostas/GeMID" rel="noopener">Code</a><a class="chip" href="https://doi.org/10.1016/j.iot.2025.101806" rel="noopener">Paper</a></p>      </li>
+      <li class="project">
+        <p class="project-kind">Açık kaynak</p><p class="project-origin"><span class="origin origin-ed" title="Çalışmanın yapıldığı yer">Edinburgh Üniversitesi</span></p>        <h3>Turkish Verbal Fluency Analysis</h3>
+        <p>Türkçe sözel akıcılık verisinde anlamsal kümeleri ve geçişleri otomatik tespit eden araçlar; Rabia&#39;nın doktorası sırasında geliştirildi (Python, scikit-learn).</p>
+<p class="project-links"><a class="chip" href="https://rabiayasakostas.com/projects/turkish-verbal-fluency-analysis" rel="noopener">Project</a></p>      </li>
+      <li class="project">
+        <p class="project-kind">Açık kaynak</p><p class="project-origin"><span class="origin origin-lab" title="Çalışmanın yapıldığı yer">KOSTAS Lab</span></p>        <h3>Floor separation</h3>
+        <p>Node2Vec gömmeleri ve kümeleme ile WiFi yörüngelerinden denetimsiz kat ayrımı (IPIN 2025).</p>
+<p class="project-links"><a class="chip" href="https://github.com/kahramankostas/IPIN2025" rel="noopener">Code</a><a class="chip" href="https://arxiv.org/abs/2505.08088" rel="noopener">Paper</a></p>      </li>
+      <li class="project">
+        <p class="project-kind">Açık kaynak</p><p class="project-origin"><span class="origin origin-collab" title="Çalışmanın yapıldığı yer">Dış iş birliği</span></p>        <h3>TRfallacy</h3>
+        <p>Türkçe çevrimdışı dil modellerinde akıl yürütmeyi safsata tespitiyle ölçen değerlendirme seti; İnanç Feridun Canci, Zeynep Gizem Emir Shahbazov ve Edibe Yılmaz ile.</p>
+<p class="project-links"><a class="chip" href="https://github.com/kahramankostas/TRfallacy/" rel="noopener">Code</a></p>      </li>
+      <li class="project">
+        <p class="project-kind">Destekli proje, TÜBİTAK 2209-A</p><p class="project-origin"><span class="origin origin-gumushane" title="Çalışmanın yapıldığı yer">Gümüşhane Üniversitesi</span></p>        <h3>TurkCap</h3>
+        <p>Kültürel bağlama duyarlı Türkçe görüntü altyazılama: Hasan Hüseyin Keskin&#39;in Gümüşhane Üniversitesi&#39;nde, Dr. Rabia Yaşa Koştaş danışmanlığında yürüttüğü lisans araştırma projesi (2025, devam ediyor).</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="news" aria-labelledby="news-h">
+  <div class="wrap news-grid">
+    <div><h2 id="news-h" class="h2">Haberler</h2><p class="news-lead">Üyelerimizden haberler; laboratuvar kurulmadan önceki çalışmalar dahil.</p></div>
+    <ol class="timeline">
+      <li><time datetime="2026-11">Kas 2026</time>
+        <p>KOSTAS Lab kuruldu ve web sitesi yayına girdi.</p></li>
+      <li><time datetime="2026-10">Eki 2026</time>
+        <p><a href="https://arxiv.org/abs/2307.08679" rel="noopener">Kahraman, Mike Just ve Michael A. Lones (Heriot-Watt Üniversitesi) ile yazdıkları “Externally Validating the IoTDevID Device Identification Methodology” bildirisini SINCONF 2026&#39;da sundu.</a></p></li>
+      <li><time datetime="2026-04">Nis 2026</time>
+        <p><a href="https://icada.com.tr/en/" rel="noopener">Kahraman ve ortak yazarları, IoT cihaz tanıma ve Türkçe çevrimdışı LLM&#39;ler üzerine üç bildiriyi ICADA 2026&#39;da sundu.</a></p></li>
+      <li><time datetime="2026">2026</time>
+        <p>Rabia ile ortak yazarları Pinar Bozbeyoglu, Elif Esra Altuner ve Muzaffer Elmas, nanomalzeme ve nanobiyoteknoloji için yapay zekâ üzerine üç kitap bölümünü IGI Global&#39;de yayımladı.</p></li>
+      <li><time datetime="2025-10">Eki 2025</time>
+        <p><a href="https://doi.org/10.1016/j.iot.2025.101806" rel="noopener">Kahraman&#39;ın Heriot-Watt Üniversitesi&#39;ndeki doktorasına dayanan GeMID (Rabia, Mike Just ve Michael A. Lones ile) Elsevier Internet of Things dergisinde kabul edildi (Q1).</a></p></li>
+      <li><time datetime="2025-07">Tem 2025</time>
+        <p><a href="https://doi.org/10.1016/j.comnet.2025.111550" rel="noopener">Kahraman&#39;ın Heriot-Watt Üniversitesi&#39;nde Mike Just ve Michael A. Lones ile yürüttüğü doktora araştırmasından çıkan IoTGeM, Computer Networks dergisinde kabul edildi (Q1).</a></p></li>
+      <li><time datetime="2025-06">Haz 2025</time>
+        <p><a href="https://arxiv.org/abs/2505.08088" rel="noopener">Rabia ve Kahraman&#39;ın graf tabanlı kat ayrımı bildirisi IPIN 2025&#39;te kabul edildi.</a></p></li>
+      <li><time datetime="2025-01">Oca 2025</time>
+        <p><a href="https://ieeexplore.ieee.org/abstract/document/10824899" rel="noopener">Kahraman, Mike Just ve Michael A. Lones&#39;un (Heriot-Watt Üniversitesi) “Individual Packet Features are a Risk to Model Generalisation” makalesi IEEE Networking Letters&#39;ta kabul edildi.</a></p></li>
+      <li><time datetime="2024-10">Eki 2024</time>
+        <p>Rabia, Gümüşhane Üniversitesi&#39;nde öğretim görevlisi olarak göreve başladı.</p></li>
+      <li><time datetime="2024-09">Eyl 2024</time>
+        <p>Kahraman, YYEGM&#39;de Milli Eğitim Uzmanı olarak göreve başladı.</p></li>
+      <li><time datetime="2024">2024</time>
+        <p>Rabia, Edinburgh Üniversitesi&#39;nde Bilişim doktorasını tamamladı.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section collab" id="collaborators" aria-labelledby="collab-h">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="collab-h" class="h2">İş birlikçiler ve önceki kurumlar</h2>
+      <p class="lead">Bu sitedeki çalışmaların çoğu bu kişilerle ve bu kurumlarda yapıldı. Burada anılmaları bir teşekkürdür; resmî bir ortaklık anlamına gelmez.</p>
+    </header>
+    <ul class="collab-list">
+      <li>
+        <h3>Heriot-Watt Üniversitesi, Edinburgh</h3>
+        <p class="collab-context">Kahraman&#39;ın Bilgisayar Bilimleri doktorası: IoTDevID, IoTGeM, GeMID ve ilgili makaleler.</p>
+        <p class="collab-people"><a href="https://researchportal.hw.ac.uk/en/persons/mike-just/" rel="noopener">Dr. Mike Just</a> <span class="collab-role">(doktora danışmanı)</span>, <a href="https://www.macs.hw.ac.uk/~ml355/" rel="noopener">Dr. Michael A. Lones</a> <span class="collab-role">(doktora danışmanı)</span></p>
+      </li>
+      <li>
+        <h3>Edinburgh Üniversitesi</h3>
+        <p class="collab-context">Rabia&#39;nın Bilişim doktorası: Türkçe semantik sözel akıcılık ve çok kullanıcılı akıllı hoparlörler üzerine çalışmalar.</p>
+        <p class="collab-people">Dr. Maria K. Wolters, Dr. Sarah E. MacPherson, Dr. Kami Vaniea, Nicole Meng-Schneider</p>
+      </li>
+      <li>
+        <h3>Huawei UK Ar-Ge Merkezi, Edinburgh</h3>
+        <p class="collab-context">Kahraman&#39;ın araştırmacılığı ve Rabia&#39;nın stajı; WiFi tabanlı mesafe kestirimi (IPIN 2022). Bu sitede yalnızca yayımlanmış çalışmalar yer alır.</p>
+        <p class="collab-people">Francisco Zampella, Firas Alsehly</p>
+      </li>
+      <li>
+        <h3>Gümüşhane Üniversitesi</h3>
+        <p class="collab-context">Rabia ve Kahraman&#39;ın güncel dersleri; Rabia danışmanlığındaki TÜBİTAK 2209-A lisans projeleri.</p>
+        <p class="collab-people">Hasan Hüseyin Keskin <span class="collab-role">(TurkCap, TÜBİTAK 2209-A)</span>, Hüseyin Tunç <span class="collab-role">(TÜBİTAK 2209-A)</span></p>
+      </li>
+      <li>
+        <h3>Diğer ortak yazarlar</h3>
+        <p class="collab-context">Türkçe çevrimdışı LLM değerlendirmesi (ICADA 2026) ve nanomalzemeler için yapay zekâ (IGI Global, 2026).</p>
+        <p class="collab-people">Edibe Yılmaz, İnanç Feridun Canci, Zeynep Gizem Emir Shahbazov, Pinar Bozbeyoglu, Elif Esra Altuner, Muzaffer Elmas</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section contact" id="contact" aria-labelledby="contact-h">
+  <div class="wrap contact-grid">
+    <div>
+      <h2 id="contact-h" class="h2">Bizimle çalışın</h2>
+      <p class="lead">IoT güvenliği, uygulamalı makine öğrenmesi, Türkçe doğal dil işleme ve iç mekân konumlandırma alanlarında iş birliklerine, öğrencilere ve ortak proje önerilerine açığız. İkimizden birine yazmanız yeterli.</p>
+    </div>
+    <ul class="contact-list">
+      <li>
+        <span class="c-name">Dr. Kahraman Koştaş</span>
+        <a href="mailto:kahramankostas@gmail.com">kahramankostas@gmail.com</a>
+        <button type="button" class="copy-btn small" data-copy="kahramankostas@gmail.com" data-copy-label="Kopyalandı">Kopyala</button>
+      </li>
+      <li>
+        <span class="c-name">Dr. Rabia Yaşa Koştaş</span>
+        <a href="mailto:rabia.yasa@gumushane.edu.tr">rabia.yasa@gumushane.edu.tr</a>
+        <button type="button" class="copy-btn small" data-copy="rabia.yasa@gumushane.edu.tr" data-copy-label="Kopyalandı">Kopyala</button>
+      </li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-brand"><img src="/assets/img/logo.png" alt="" width="28" height="27"> KOSTAS Lab</p>
+      <p>Knowledge-Oriented Systems for Technology, AI and Science.</p>
+      <p>Gümüşhane, Türkiye</p>
+    </div>
+    <ul class="footer-links">
+<li><a href="/tr/ekip/kahraman-kostas/">Dr. Kahraman Koştaş</a></li><li><a href="/tr/ekip/rabia-yasa-kostas/">Dr. Rabia Yaşa Koştaş</a></li>      <li><a href="/tr/yayinlar/">Yayınlar</a></li>
+      <li><a href="/" hreflang="en" lang="en">English</a></li>
+    </ul>
+    <p class="copy">© 2026 KOSTAS Lab</p>
+  </div>
+</footer>
+<script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/graph.js" defer></script></body>
+</html>

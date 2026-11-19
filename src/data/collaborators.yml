@@ -1,0 +1,34 @@
+# İş birlikçiler ve önceki kurumlar / Collaborators and previous institutions
+# Bu bölüm bir teşekkürdür; kurum logosu kullanılmaz, resmî ortaklık iddia edilmez.
+# people: o kurumdaki danışman ve ortak yazarlar. role yalnızca kesin bilinen durumlarda yazılır.
+- institution: {en: "Heriot-Watt University, Edinburgh", tr: "Heriot-Watt Üniversitesi, Edinburgh"}
+  context: {en: "Kahraman's PhD in Computer Science: IoTDevID, IoTGeM, GeMID and related papers.", tr: "Kahraman'ın Bilgisayar Bilimleri doktorası: IoTDevID, IoTGeM, GeMID ve ilgili makaleler."}
+  people:
+    - {name: "Dr. Mike Just", role: {en: "PhD supervisor", tr: "doktora danışmanı"}, url: "https://researchportal.hw.ac.uk/en/persons/mike-just/"}
+    - {name: "Dr. Michael A. Lones", role: {en: "PhD supervisor", tr: "doktora danışmanı"}, url: "https://www.macs.hw.ac.uk/~ml355/"}
+- institution: {en: "University of Edinburgh", tr: "Edinburgh Üniversitesi"}
+  context: {en: "Rabia's PhD in Informatics: Turkish semantic verbal fluency, and work on multi-user smart speakers.", tr: "Rabia'nın Bilişim doktorası: Türkçe semantik sözel akıcılık ve çok kullanıcılı akıllı hoparlörler üzerine çalışmalar."}
+  people:
+    - {name: "Dr. Maria K. Wolters"}
+    - {name: "Dr. Sarah E. MacPherson"}
+    - {name: "Dr. Kami Vaniea"}
+    - {name: "Nicole Meng-Schneider"}
+- institution: {en: "Huawei UK R&D Centre, Edinburgh", tr: "Huawei UK Ar-Ge Merkezi, Edinburgh"}
+  context: {en: "Kahraman's research role and Rabia's internship; WiFi-based distance estimation (IPIN 2022). Only published work is listed on this site.", tr: "Kahraman'ın araştırmacılığı ve Rabia'nın stajı; WiFi tabanlı mesafe kestirimi (IPIN 2022). Bu sitede yalnızca yayımlanmış çalışmalar yer alır."}
+  people:
+    - {name: "Francisco Zampella"}
+    - {name: "Firas Alsehly"}
+- institution: {en: "Gümüşhane University", tr: "Gümüşhane Üniversitesi"}
+  context: {en: "Rabia's and Kahraman's current teaching; TÜBİTAK 2209-A undergraduate projects supervised by Rabia.", tr: "Rabia ve Kahraman'ın güncel dersleri; Rabia danışmanlığındaki TÜBİTAK 2209-A lisans projeleri."}
+  people:
+    - {name: "Hasan Hüseyin Keskin", role: {en: "TurkCap, TÜBİTAK 2209-A", tr: "TurkCap, TÜBİTAK 2209-A"}}
+    - {name: "Hüseyin Tunç", role: {en: "TÜBİTAK 2209-A", tr: "TÜBİTAK 2209-A"}}
+- institution: {en: "Other co-authors", tr: "Diğer ortak yazarlar"}
+  context: {en: "Turkish offline LLM evaluation (ICADA 2026) and AI for nanomaterials (IGI Global, 2026).", tr: "Türkçe çevrimdışı LLM değerlendirmesi (ICADA 2026) ve nanomalzemeler için yapay zekâ (IGI Global, 2026)."}
+  people:
+    - {name: "Edibe Yılmaz"}
+    - {name: "İnanç Feridun Canci"}
+    - {name: "Zeynep Gizem Emir Shahbazov"}
+    - {name: "Pinar Bozbeyoglu"}
+    - {name: "Elif Esra Altuner"}
+    - {name: "Muzaffer Elmas"}

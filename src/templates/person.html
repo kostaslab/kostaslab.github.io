@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% from "_macros.html" import pub_item with context %}
+{% set p = person %}
+{% block main %}
+<article class="profile">
+  <header class="profile-head">
+    <div class="wrap profile-head-grid">
+      <picture class="profile-photo">
+        <source srcset="/assets/img/{{ p.slug }}.webp" type="image/webp">
+        <img src="/assets/img/{{ p.slug }}.jpg" alt="{{ p.honorific }} {{ t(p.name) }}" width="640" height="800">
+      </picture>
+      <div class="profile-intro">
+        <nav class="crumbs" aria-label="breadcrumb"><a href="{{ url('home') }}">KOSTAS Lab</a> / <a href="{{ url('home') }}#people">{{ s('nav_people') }}</a></nav>
+        <h1 class="h1"><span>{{ p.honorific }}</span> <span>{{ t(p.name) }}</span></h1>
+        <p class="role">{{ t(p.role) }}</p>
+        <p class="pos">{{ t(p.position) }}</p>
+        <p class="profile-short">{{ t(p.short) }}</p>
+        <p class="profile-actions">
+          <a class="btn btn-primary" href="mailto:{{ p.email }}">{{ p.email }}</a>
+          {% if p.cv %}
+            <a class="btn" href="{{ t(p.cv) }}" rel="noopener">{{ s('cv') }}</a>
+          {% endif %}
+          {% if p.website %}<a class="btn" href="{{ p.website }}" rel="noopener me">{{ s('personal_site') }}</a>{% endif %}
+        </p>
+        <ul class="profile-links" aria-label="{{ s('profile_links') }}">
+          {% for label, href in p.links.items() %}<li><a href="{{ href }}" rel="noopener me">{{ label }}</a></li>{% endfor %}
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap profile-body">
+    <aside class="profile-aside">
+      <dl class="facts facts-col">
+        {% for h in p.highlights %}<div><dt>{{ h.value }}</dt><dd>{{ h[lang] }}</dd></div>{% endfor %}
+      </dl>
+      <h2 class="h3">{{ s('profile_interests') }}</h2>
+      <ul class="tags">{% for i in t(p.interests) %}<li>{{ i }}</li>{% endfor %}</ul>
+    </aside>
+
+    <div class="profile-main">
+      <section aria-labelledby="about-h">
+        <h2 id="about-h" class="h2">{{ s('profile_about') }}</h2>
+        <div class="prose">{% for para in t(p.bio) %}<p>{{ para }}</p>{% endfor %}</div>
+      </section>
+
+      <section aria-labelledby="pubs-h">
+        <h2 id="pubs-h" class="h2">{{ s('profile_pubs') }} <span class="n">{{ my_pubs | length }}</span></h2>
+        <ol class="pubs">{% for x in my_pubs %}{{ pub_item(x, show_year=true) }}{% endfor %}</ol>
+      </section>
+
+      {% if my_projects %}
+      <section aria-labelledby="proj-h">
+        <h2 id="proj-h" class="h2">{{ s('profile_projects') }}</h2>
+        <ul class="projects compact">
+          {% for pr in my_projects %}
+          <li class="project"><p class="project-kind">{{ s('kind_' ~ pr.kind) }}{% if pr.funder %}, {{ pr.funder }}{% endif %}</p>{% if pr.origin %}<p class="project-origin"><span class="origin origin-{{ pr.origin }}" title="{{ s('origin_title') }}">{{ t(site.origins[pr.origin].label) }}</span></p>{% endif %}<h3>{{ pr.name }}</h3><p>{{ t(pr.text) }}</p>
+            {% if pr.links %}<p class="project-links">{% for label, href in pr.links.items() %}<a class="chip" href="{{ href }}" rel="noopener">{{ label }}</a>{% endfor %}</p>{% endif %}</li>
+          {% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+
+      {% if p.supervision %}
+      <section aria-labelledby="sup-h">
+        <h2 id="sup-h" class="h2">{{ s('profile_supervision') }}</h2>
+        <ul class="entries">
+          {% for x in p.supervision %}
+          <li><p class="e-when">{{ x.program }}{% if x.status %}<br>{{ t(x.status) }}{% endif %}</p>
+            <div><h3>{{ x.title }}</h3><p>{{ s('student') }}: {{ x.student }}</p></div></li>
+          {% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+
+      <section aria-labelledby="teach-h">
+        <h2 id="teach-h" class="h2">{{ s('profile_teaching') }}</h2>
+        <ul class="entries">
+          {% for c in p.teaching %}
+          <li><p class="e-when">{{ c.term }}</p>
+            <div><h3>{% if c.code %}<span class="code">{{ c.code }}</span> {% endif %}{{ t(c.title) }}</h3><p>{{ t(c.place) }}</p></div></li>
+          {% endfor %}
+        </ul>
+      </section>
+
+      <section aria-labelledby="exp-h">
+        <h2 id="exp-h" class="h2">{{ s('profile_experience') }}</h2>
+        <ul class="entries">
+          {% for e in p.experience %}
+          <li><p class="e-when">{{ t(e.period) if e.period else '' }}</p>
+            <div><h3>{{ t(e.title) }}</h3><p>{{ t(e.org) }}</p>{% if e.note %}<p class="note">{{ t(e.note) }}</p>{% endif %}</div></li>
+          {% endfor %}
+        </ul>
+      </section>
+
+      <section aria-labelledby="edu-h">
+        <h2 id="edu-h" class="h2">{{ s('profile_education') }}</h2>
+        <ul class="entries">
+          {% for e in p.education %}
+          <li><p class="e-when">{{ e.period or '' }}</p>
+            <div><h3>{{ t(e.degree) }}</h3>{% if e.institution %}<p>{{ e.institution }}{% if e.place %}, {{ t(e.place) }}{% endif %}</p>{% endif %}{% if e.note %}<p class="note">“{{ e.note }}”</p>{% endif %}</div></li>
+          {% endfor %}
+        </ul>
+      </section>
+    </div>
+  </div>
+</article>
+{% endblock %}

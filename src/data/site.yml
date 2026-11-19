@@ -1,0 +1,67 @@
+# Genel site ayarları / Global settings
+url: https://kostaslab.github.io
+name: KOSTAS Lab
+founded: 2026
+# Google Search Console doğrulama kodu ("HTML etiketi" yöntemi). Boşsa etiket eklenmez.
+google_site_verification: ""
+# Bing Webmaster Tools doğrulama kodu (isteğe bağlı)
+bing_site_verification: ""
+email: kahramankostas@gmail.com
+github: https://github.com/kostaslab
+location: {en: "Gümüşhane, Türkiye", tr: "Gümüşhane, Türkiye"}
+
+tagline:
+  en: An independent research lab building machine learning that holds up outside the lab — in IoT networks, in Turkish language data and in the buildings we move through.
+  tr: Laboratuvar dışında da işe yarayan makine öğrenmesi geliştiren bağımsız bir araştırma grubu — IoT ağlarında, Türkçe dil verisinde ve içinde dolaştığımız binalarda.
+
+description:
+  en: KOSTAS Lab (Knowledge-Oriented Systems for Technology, AI and Science) is a research lab led by Dr. Kahraman Kostas and Dr. Rabia Yaşa Koştaş, working on generalisable machine learning for IoT security, Turkish NLP and offline LLMs, cognitive language analytics and indoor positioning.
+  tr: KOSTAS Lab (Knowledge-Oriented Systems for Technology, AI and Science), Dr. Kahraman Koştaş ve Dr. Rabia Yaşa Koştaş'ın yürüttüğü; IoT güvenliği için genellenebilir makine öğrenmesi, Türkçe doğal dil işleme ve çevrimdışı büyük dil modelleri, bilişsel dil analitiği ve iç mekân konumlandırma üzerine çalışan bir araştırma laboratuvarıdır.
+
+# Arama sonuçlarında görünen kısa açıklama (~155 karakter)
+meta_description:
+  en: "KOSTAS Lab: research on generalisable machine learning for IoT security, Turkish NLP and offline LLMs, verbal fluency analysis and indoor positioning."
+  tr: "KOSTAS Lab: IoT güvenliği için genellenebilir makine öğrenmesi, Türkçe doğal dil işleme, çevrimdışı LLM'ler, sözel akıcılık ve iç mekân konumlandırma."
+
+about:
+  en:
+    - We are two researchers who trained at Edinburgh and now work in Türkiye. Most machine-learning results look strong on the dataset they were built on and fall apart on the next one; our shared interest is in models that generalise — to new devices, new networks, new speakers and new buildings.
+    - We publish our code with our papers, test our methods on data we did not design them for, and care about methods that work for Turkish as well as English.
+  tr:
+    - "Edinburgh'da yetişip Türkiye'de çalışan iki araştırmacıyız. Makine öğrenmesi sonuçlarının çoğu, üzerinde geliştirildiği veri setinde güçlü görünür ve bir sonrakinde çöker. Ortak ilgimiz genellenebilen modeller: yeni cihazlara, yeni ağlara, yeni konuşuculara ve yeni binalara taşınabilen modeller."
+    - Kodumuzu makalelerimizle birlikte yayımlıyor, yöntemlerimizi onlar için tasarlamadığımız verilerde sınıyor ve İngilizce kadar Türkçe için de çalışan yöntemlere önem veriyoruz.
+
+collaborate:
+  en: We welcome collaborations, visiting students and joint proposals in IoT security, applied machine learning, Turkish NLP and indoor positioning. Write to either of us.
+  tr: IoT güvenliği, uygulamalı makine öğrenmesi, Türkçe doğal dil işleme ve iç mekân konumlandırma alanlarında iş birliklerine, öğrencilere ve ortak proje önerilerine açığız. İkimizden birine yazmanız yeterli.
+
+# Bağımsızlık notu: KOSTAS Lab bir tüzel kişi ya da bir kurumun birimi değildir.
+independence:
+  en: "KOSTAS Lab is an independent research group run by its two founders. It is not a legal entity and not a unit of any university or public institution; each member's institutional affiliation is listed on their profile."
+  tr: "KOSTAS Lab, iki kurucusunun yürüttüğü bağımsız bir araştırma grubudur. Tüzel kişiliği yoktur ve herhangi bir üniversitenin ya da kamu kurumunun birimi değildir; üyelerin kurumsal bağlantıları profillerinde yer alır."
+
+# Laboratuvar öncesi çalışmalara ilişkin bağlam notu (ana sayfa ve yayınlar sayfası)
+context_note:
+  en: "KOSTAS Lab was founded in 2026. The publications and tools listed here were produced earlier by its members with their co-authors at Heriot-Watt University, the University of Edinburgh, Huawei UK and other institutions; each one is labelled with where the work was done."
+  tr: "KOSTAS Lab 2026'da kuruldu. Burada listelenen yayın ve araçlar, üyelerin daha önce Heriot-Watt Üniversitesi, Edinburgh Üniversitesi, Huawei UK ve diğer kurumlarda ortak yazarlarıyla yaptığı çalışmalardır; her birinde çalışmanın nerede yapıldığı belirtilmiştir."
+
+# Çalışmanın yapıldığı yer etiketleri (publications.yml ve projects.yml → origin)
+origins:
+  hw:
+    label: {en: "Heriot-Watt University", tr: "Heriot-Watt Üniversitesi"}
+    org: "Heriot-Watt University"
+  ed:
+    label: {en: "University of Edinburgh", tr: "Edinburgh Üniversitesi"}
+    org: "University of Edinburgh"
+  huawei:
+    label: {en: "Huawei UK R&D", tr: "Huawei UK Ar-Ge"}
+    org: "Huawei UK R&D Centre"
+  gumushane:
+    label: {en: "Gümüşhane University", tr: "Gümüşhane Üniversitesi"}
+    org: "Gümüşhane University"
+  collab:
+    label: {en: "External collaboration", tr: "Dış iş birliği"}
+  founders:
+    label: {en: "Founders' joint work, before the lab", tr: "Kurucuların laboratuvar öncesi ortak çalışması"}
+  lab:
+    label: {en: "KOSTAS Lab", tr: "KOSTAS Lab"}

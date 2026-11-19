@@ -1,0 +1,32 @@
+# Araştırma alanları / Research themes
+# topic: publications.yml içindeki topics değerleriyle eşleşir (ilgili yayın sayısı otomatik hesaplanır)
+- topic: iot
+  title: {en: "Generalisable IoT security", tr: "Genellenebilir IoT güvenliği"}
+  text:
+    en: "Identifying devices and detecting attacks from network behaviour, with models that keep working on devices, datasets and network conditions they were not trained on. Builds on IoTDevID, IoTGeM and GeMID, developed during Kahraman's PhD at Heriot-Watt University with Dr. Mike Just and Dr. Michael A. Lones."
+    tr: "Ağ davranışından cihaz tanıma ve saldırı tespiti; eğitilmedikleri cihazlarda, veri setlerinde ve ağ koşullarında da çalışan modellerle. Kahraman'ın Heriot-Watt Üniversitesi'ndeki doktorasında Dr. Mike Just ve Dr. Michael A. Lones ile geliştirilen IoTDevID, IoTGeM ve GeMID üzerine kurulu."
+  keywords: {en: [device identification, intrusion detection, feature generalisation, network forensics], tr: [cihaz tanıma, saldırı tespiti, öznitelik genellemesi, ağ adli bilişimi]}
+- topic: nlp
+  title: {en: "Turkish NLP and offline LLMs", tr: "Türkçe doğal dil işleme ve çevrimdışı LLM'ler"}
+  text:
+    en: "Evaluating what locally run language models can and cannot do in Turkish, from everyday questions to logical fallacy detection, with co-authors Edibe Yılmaz, İnanç Feridun Canci and Zeynep Gizem Emir Shahbazov. Related student work includes TurkCap, a TÜBİTAK 2209-A project at Gümüşhane University."
+    tr: "Yerelde çalışan dil modellerinin Türkçede neyi yapıp neyi yapamadığını ölçüyoruz; gündelik sorulardan mantık safsatalarını tanımaya kadar. Ortak yazarlar: Edibe Yılmaz, İnanç Feridun Canci ve Zeynep Gizem Emir Shahbazov. İlgili öğrenci çalışmaları arasında Gümüşhane Üniversitesi'nde yürütülen TÜBİTAK 2209-A projesi TurkCap var."
+  keywords: {en: [LLM evaluation, reasoning, fallacy detection, image captioning], tr: [LLM değerlendirme, akıl yürütme, safsata tespiti, görüntü altyazılama]}
+- topic: cognition
+  title: {en: "Cognitive language analytics", tr: "Bilişsel dil analitiği"}
+  text:
+    en: "Computational analysis of semantic verbal fluency (automatically finding clusters and switches in the words people produce) to support cognitive and clinical assessment for Turkish speakers. Builds on Rabia's PhD at the University of Edinburgh and work with Dr. Maria K. Wolters and Dr. Sarah E. MacPherson."
+    tr: "Semantik sözel akıcılığın hesaplamalı analizi (insanların ürettiği kelimelerdeki kümeleri ve geçişleri otomatik bulmak) ile Türkçe konuşucular için bilişsel ve klinik değerlendirmeye destek. Rabia'nın Edinburgh Üniversitesi'ndeki doktorasına ve Dr. Maria K. Wolters ile Dr. Sarah E. MacPherson'la yapılan çalışmalara dayanıyor."
+  keywords: {en: [verbal fluency, semantic similarity, explainable AI, HCI], tr: [sözel akıcılık, anlamsal benzerlik, açıklanabilir yapay zekâ, insan-bilgisayar etkileşimi]}
+- topic: positioning
+  title: {en: "Indoor positioning", tr: "İç mekân konumlandırma"}
+  text:
+    en: "Locating people and devices where GPS fails, using only WiFi signals. Started with WiFi distance estimation alongside Huawei UK's indoor positioning team (IPIN 2022) and continued with the founders' graph-based floor separation (IPIN 2025)."
+    tr: "GPS'in çalışmadığı yerlerde yalnızca WiFi sinyalleriyle kişi ve cihaz konumlandırma. Huawei UK iç mekân konumlandırma ekibiyle WiFi mesafe kestirimi (IPIN 2022) ile başladı; kurucuların graf tabanlı kat ayrımı çalışmasıyla (IPIN 2025) sürdü."
+  keywords: {en: [WiFi fingerprinting, graph embeddings, floor detection], tr: [WiFi parmak izi, graf gömmeleri, kat tespiti]}
+- topic: materials
+  title: {en: "AI for materials and nanobiotechnology", tr: "Malzeme ve nanobiyoteknoloji için yapay zekâ"}
+  text:
+    en: "Interdisciplinary book chapters with Pinar Bozbeyoglu, Elif Esra Altuner and Muzaffer Elmas on AI-driven design of nanocomposites, targeted antibiotic delivery and fuel desulfurisation."
+    tr: "Pinar Bozbeyoglu, Elif Esra Altuner ve Muzaffer Elmas ile nanokompozitlerin yapay zekâ destekli tasarımı, hedefli antibiyotik salımı ve yakıt kükürt giderimi üzerine disiplinler arası kitap bölümleri."
+  keywords: {en: [inverse design, nanocomposites, antimicrobial resistance], tr: [ters tasarım, nanokompozitler, antimikrobiyal direnç]}

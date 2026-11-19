@@ -1,0 +1,122 @@
+# Ekip üyeleri / Lab members
+# İki dilli alanlar: {en: "...", tr: "..."}. Tek dilli bir metin yazarsanız iki dilde de aynısı kullanılır.
+# Yeni üye eklemek için bir blok kopyalayın; fotoğrafı assets/img/<slug>.jpg (+ .webp) olarak koyun (4:5 oran, ~640x800).
+
+- id: kahraman
+  slug: kahraman-kostas
+  name: {en: "Kahraman Kostas", tr: "Kahraman Koştaş"}
+  alternate_names: [Kahraman Kostas, Kahraman Koştaş, Kahraman Kostaş]
+  honorific: Dr.
+  role:
+    en: Co-founder · Researcher & Technical Architect
+    tr: Kurucu ortak · Araştırmacı ve Teknik Mimar
+  position:
+    en: National Education Expert (YYEGM, Ministry of National Education) and Instructor at Gümüşhane University
+    tr: Milli Eğitim Uzmanı (YYEGM, Millî Eğitim Bakanlığı) ve Gümüşhane Üniversitesi'nde öğretim elemanı
+  email: kahramankostas@gmail.com
+  website: https://kahramankostas.github.io/
+  cv:
+    en: https://kahramankostas.github.io/assets/kahraman_kostas.pdf
+    tr: https://kahramankostas.github.io/assets/kahraman_kostas_tr.pdf
+  short:
+    en: Builds machine-learning models for IoT security that keep working on devices and networks they have never seen.
+    tr: Görmediği cihaz ve ağlarda da çalışmaya devam eden, IoT güvenliği için makine öğrenmesi modelleri geliştiriyor.
+  bio:
+    en:
+      - Kahraman holds a PhD in Computer Science from Heriot-Watt University, Edinburgh. His thesis, “Behaviour-based Security with Machine Learning on IoT Networks” (supervised by Dr. Mike Just and Dr. Michael Lones), showed how conventional feature representations hinder model generalisation, and introduced the IoTDevID, GeMID and IoTGeM frameworks for device identification and attack detection that stay robust across unseen devices and changing network conditions.
+      - During his PhD he worked as a researcher at the Huawei UK R&D Centre in Edinburgh, developing ML solutions for community detection and WiFi-based distance estimation; his team won 1st place in the Huawei UK University Challenge 2021 for indoor localisation.
+      - Since September 2024 he has served as a National Education Expert at the Directorate General of Higher Education and Overseas Education (YYEGM), where he is technical lead and architect of the “Ülkem Yanımda” platform, connecting 100+ teachers with 2,000+ students in 10+ countries. He also holds an MSc in Computer Networks and Security (Distinction) from the University of Essex, and degrees in Computer Education (Marmara University) and Literature.
+    tr:
+      - Kahraman, Edinburgh'daki Heriot-Watt Üniversitesi'nde Bilgisayar Bilimleri alanında doktorasını tamamladı. Dr. Mike Just ve Dr. Michael Lones danışmanlığındaki “Behaviour-based Security with Machine Learning on IoT Networks” başlıklı tezinde, alışılmış öznitelik temsillerinin modellerin genellenebilirliğini nasıl kısıtladığını gösterdi; görülmemiş cihazlarda ve değişen ağ koşullarında da güvenilir kalan IoTDevID, GeMID ve IoTGeM çerçevelerini geliştirdi.
+      - Doktora sürecinde Huawei UK Edinburgh Ar-Ge Merkezi'nde araştırmacı olarak topluluk tespiti ve WiFi tabanlı mesafe kestirimi üzerine çalıştı; ekibi, iç mekân konumlandırma çalışmasıyla Huawei UK University Challenge 2021'de birinci oldu.
+      - Eylül 2024'ten bu yana Yükseköğretim ve Yurt Dışı Eğitim Genel Müdürlüğü'nde (YYEGM) Milli Eğitim Uzmanı olarak görev yapıyor; 10'dan fazla ülkede 100'ü aşkın öğretmeni 2.000'den fazla öğrenciyle buluşturan “Ülkem Yanımda” platformunun teknik lideri ve mimarı. Essex Üniversitesi'nde Bilgisayar Ağları ve Güvenliği yüksek lisansını (Distinction) tamamladı; Marmara Üniversitesi Bilgisayar Öğretmenliği ve Edebiyat lisans dereceleri bulunuyor.
+  interests:
+    en: [IoT security, Device identification, Generalisable machine learning, Network forensics, Explainable AI, Indoor positioning, Offline LLMs]
+    tr: [IoT güvenliği, Cihaz tanıma, Genellenebilir makine öğrenmesi, Ağ adli bilişimi, Açıklanabilir yapay zekâ, İç mekân konumlandırma, Çevrimdışı büyük dil modelleri]
+  highlights:
+    - {value: "1st", en: "Huawei UK University Challenge 2021", tr: "Huawei UK University Challenge 2021 birinciliği"}
+    - {value: "5", en: "Q1 journal articles", tr: "Q1 dergi makalesi"}
+    - {value: "2,000+", en: "students reached through Ülkem Yanımda", tr: "Ülkem Yanımda ile ulaşılan öğrenci"}
+  education:
+    - {degree: {en: "PhD in Computer Science", tr: "Bilgisayar Bilimleri Doktora"}, institution: Heriot-Watt University, place: {en: "Edinburgh, UK", tr: "Edinburgh, Birleşik Krallık"}, note: "Behaviour-based Security with Machine Learning on IoT Networks"}
+    - {degree: {en: "MSc Computer Networks and Security (Distinction)", tr: "Bilgisayar Ağları ve Güvenliği Yüksek Lisans (Distinction)"}, institution: University of Essex, place: {en: "Colchester, UK", tr: "Colchester, Birleşik Krallık"}}
+    - {degree: {en: "BSc Computer Education", tr: "Bilgisayar Öğretmenliği Lisans"}, institution: Marmara University, place: {en: "İstanbul, Türkiye", tr: "İstanbul, Türkiye"}}
+    - {degree: {en: "BA Literature", tr: "Edebiyat Lisans"}}
+  experience:
+    - {period: {en: "2024 – present", tr: "2024 – devam"}, title: {en: "National Education Expert", tr: "Milli Eğitim Uzmanı"}, org: {en: "Directorate General of Higher Education and Overseas Education (YYEGM), Ministry of National Education", tr: "Yükseköğretim ve Yurt Dışı Eğitim Genel Müdürlüğü (YYEGM), Millî Eğitim Bakanlığı"}, note: {en: "Technical lead and architect of the Ülkem Yanımda platform", tr: "Ülkem Yanımda platformunun teknik lideri ve mimarı"}}
+    - {period: {en: "2026 – present", tr: "2026 – devam"}, title: {en: "Instructor", tr: "Öğretim elemanı"}, org: {en: "Gümüşhane University, Department of Management Information Systems", tr: "Gümüşhane Üniversitesi, Yönetim Bilişim Sistemleri Bölümü"}}
+    - {title: {en: "Researcher", tr: "Araştırmacı"}, org: {en: "Huawei UK R&D Centre, Edinburgh", tr: "Huawei UK Ar-Ge Merkezi, Edinburgh"}, note: {en: "Community detection and WiFi-based distance estimation", tr: "Topluluk tespiti ve WiFi tabanlı mesafe kestirimi"}}
+    - {period: "2020 – 2022", title: {en: "Teaching Assistant", tr: "Araştırma görevlisi (ders asistanı)"}, org: {en: "Heriot-Watt University, Edinburgh", tr: "Heriot-Watt Üniversitesi, Edinburgh"}}
+  teaching:
+    - {code: YBS 301, title: {en: "Data Mining", tr: "Veri Madenciliği"}, place: {en: "Gümüşhane University", tr: "Gümüşhane Üniversitesi"}, term: "2026–2027"}
+    - {title: {en: "Advanced Network Security (TA, with Dr. Mike Just)", tr: "İleri Ağ Güvenliği (asistan, Dr. Mike Just ile)"}, place: Heriot-Watt University, term: "2021, 2022"}
+    - {title: {en: "Computer Network Security (TA, with Dr. Mike Just)", tr: "Bilgisayar Ağ Güvenliği (asistan, Dr. Mike Just ile)"}, place: Heriot-Watt University, term: "2020, 2021"}
+    - {title: {en: "Software Development 1 – Java (TA, with Dr. Michael Lones)", tr: "Yazılım Geliştirme 1 – Java (asistan, Dr. Michael Lones ile)"}, place: Heriot-Watt University, term: "2020"}
+    - {title: {en: "Data Communications and Networking (TA, with Dr. Idris Skloul Ibrahim)", tr: "Veri İletişimi ve Ağlar (asistan, Dr. Idris Skloul Ibrahim ile)"}, place: Heriot-Watt University, term: "2020"}
+  links:
+    Google Scholar: https://scholar.google.com/citations?user=XjOogr0AAAAJ
+    ORCID: https://orcid.org/0000-0002-4696-1857
+    GitHub: https://github.com/kahramankostas
+    LinkedIn: https://www.linkedin.com/in/kkostas/
+    ResearchGate: https://www.researchgate.net/profile/Kahraman-Kostas
+    Web of Science: https://www.webofscience.com/wos/author/record/JZT-7728-2024
+    Scopus: https://www.scopus.com/authid/detail.uri?authorId=57222271214
+    X: https://x.com/kkostas
+  alumni_of: [Heriot-Watt University, University of Essex, Marmara University]
+  works_for: [Gümüşhane University, "Ministry of National Education (Türkiye)"]
+
+- id: rabia
+  slug: rabia-yasa-kostas
+  name: {en: "Rabia Yasa Kostas", tr: "Rabia Yaşa Koştaş"}
+  alternate_names: [Rabia Yaşa Koştaş, Rabia Yasa Kostas, Rabia Yaşa Kostas, Rabia Yasa]
+  honorific: Dr.
+  role:
+    en: Co-founder · Lecturer & Researcher
+    tr: Kurucu ortak · Öğretim Görevlisi ve Araştırmacı
+  position:
+    en: Lecturer, Department of Computer Technologies, Gümüşhane Vocational School, Gümüşhane University
+    tr: Öğretim Görevlisi, Gümüşhane Üniversitesi Gümüşhane Meslek Yüksekokulu, Bilgisayar Teknolojileri Bölümü
+  email: rabia.yasa@gumushane.edu.tr
+  website: https://rabiayasakostas.com/
+  short:
+    en: Uses natural language processing to measure how people retrieve words, starting with Turkish verbal fluency.
+    tr: İnsanların kelimeleri nasıl hatırladığını doğal dil işleme ile ölçüyor; çıkış noktası Türkçe sözel akıcılık.
+  bio:
+    en:
+      - Rabia completed her PhD in Informatics at the University of Edinburgh's School of Informatics (2018–2024). Her thesis, “Automatic Detection of Clusters and Switches in Turkish Semantic Verbal Fluency Data”, develops computational methods for analysing how speakers group and switch between semantic categories — a task widely used in cognitive and clinical assessment.
+      - Her work sits between natural language processing, machine learning and cognitive psychology, and extends to human-computer interaction, indoor positioning and AI-driven materials research. She was a research intern at Huawei UK's Edinburgh R&D centre (2022) and a teaching assistant at the University of Edinburgh.
+      - Since October 2024 she has been a lecturer in the Department of Computer Technologies at Gümüşhane University, where she teaches web programming, systems analysis and artificial intelligence, and supervises TÜBİTAK 2209-A undergraduate research projects. Before her graduate studies she taught computing for five years at the Turkish Ministry of National Education.
+    tr:
+      - Rabia, doktorasını Edinburgh Üniversitesi Bilişim Fakültesi'nde (School of Informatics) tamamladı (2018–2024). “Automatic Detection of Clusters and Switches in Turkish Semantic Verbal Fluency Data” başlıklı tezinde, konuşucuların anlamsal kategorileri nasıl gruplayıp aralarında nasıl geçiş yaptığını otomatik olarak çözümleyen hesaplamalı yöntemler geliştirdi; bu görev bilişsel ve klinik değerlendirmede yaygın biçimde kullanılıyor.
+      - Çalışmaları doğal dil işleme, makine öğrenmesi ve bilişsel psikolojinin kesişiminde yer alıyor; insan-bilgisayar etkileşimi, iç mekân konumlandırma ve yapay zekâ destekli malzeme araştırmalarına da uzanıyor. 2022'de Huawei UK Edinburgh Ar-Ge Merkezi'nde araştırma stajyeri, Edinburgh Üniversitesi'nde ders asistanı olarak çalıştı.
+      - Ekim 2024'ten bu yana Gümüşhane Üniversitesi Bilgisayar Teknolojileri Bölümü'nde öğretim görevlisi; internet programcılığı, sistem analizi ve yapay zekâ dersleri veriyor, TÜBİTAK 2209-A lisans araştırma projelerine danışmanlık yapıyor. Lisansüstü eğitiminden önce Millî Eğitim Bakanlığı'nda beş yıl bilişim öğretmenliği yaptı.
+  interests:
+    en: [Semantic analysis, Natural language processing, Machine learning, Explainable AI, Cognitive psychology, Verbal fluency, Human-computer interaction]
+    tr: [Anlamsal analiz, Doğal dil işleme, Makine öğrenmesi, Açıklanabilir yapay zekâ, Bilişsel psikoloji, Sözel akıcılık, İnsan-bilgisayar etkileşimi]
+  highlights:
+    - {value: "PhD", en: "Informatics, University of Edinburgh", tr: "Bilişim, Edinburgh Üniversitesi"}
+    - {value: "2", en: "TÜBİTAK 2209-A projects supervised", tr: "danışmanlık yapılan TÜBİTAK 2209-A projesi"}
+    - {value: "4", en: "courses taught in 2026–2027", tr: "2026–2027'de verilen ders"}
+  education:
+    - {degree: {en: "PhD in Informatics", tr: "Bilişim Doktora"}, institution: University of Edinburgh, place: {en: "School of Informatics, Edinburgh, UK", tr: "School of Informatics, Edinburgh, Birleşik Krallık"}, period: "2018 – 2024", note: "Automatic Detection of Clusters and Switches in Turkish Semantic Verbal Fluency Data"}
+    - {degree: {en: "MSc Advanced Computer Science", tr: "İleri Bilgisayar Bilimleri Yüksek Lisans"}, institution: University of Essex, place: {en: "Colchester, UK", tr: "Colchester, Birleşik Krallık"}, period: "2017 – 2018"}
+    - {degree: {en: "BA", tr: "Lisans"}, institution: Marmara University, place: {en: "İstanbul, Türkiye", tr: "İstanbul, Türkiye"}, period: "2005 – 2009"}
+  experience:
+    - {period: {en: "2024 – present", tr: "2024 – devam"}, title: {en: "Lecturer", tr: "Öğretim Görevlisi"}, org: {en: "Gümüşhane University, Gümüşhane Vocational School, Department of Computer Technologies", tr: "Gümüşhane Üniversitesi, Gümüşhane Meslek Yüksekokulu, Bilgisayar Teknolojileri Bölümü"}}
+    - {period: "2022", title: {en: "Research Intern", tr: "Araştırma Stajyeri"}, org: {en: "Huawei UK R&D Centre, Edinburgh", tr: "Huawei UK Ar-Ge Merkezi, Edinburgh"}}
+    - {period: "2021", title: {en: "Teaching Assistant", tr: "Ders Asistanı"}, org: {en: "University of Edinburgh", tr: "Edinburgh Üniversitesi"}}
+    - {period: "2010 – 2015", title: {en: "Computer Teacher", tr: "Bilişim Teknolojileri Öğretmeni"}, org: {en: "Ministry of National Education, Türkiye", tr: "Millî Eğitim Bakanlığı"}}
+  teaching:
+    - {code: BIPR207, title: {en: "Internet Programming II", tr: "İnternet Programcılığı II"}, place: {en: "Gümüşhane University", tr: "Gümüşhane Üniversitesi"}, term: "2026–2027"}
+    - {code: BLSEC205, title: {en: "Web Project Management", tr: "Web Proje Yönetimi"}, place: {en: "Gümüşhane University", tr: "Gümüşhane Üniversitesi"}, term: "2026–2027"}
+    - {code: YBS201, title: {en: "Systems Analysis and Design", tr: "Sistem Analizi ve Tasarımı"}, place: {en: "Gümüşhane University", tr: "Gümüşhane Üniversitesi"}, term: "2026–2027"}
+    - {code: YBS407, title: {en: "Artificial Intelligence", tr: "Yapay Zekâ"}, place: {en: "Gümüşhane University", tr: "Gümüşhane Üniversitesi"}, term: "2026–2027"}
+  supervision:
+    - {title: "TurkCap: Kültürel Bağlam Duyarlı Türkçe Görüntü Altyazılama", student: Hasan Hüseyin Keskin, program: "TÜBİTAK 2209-A 2025/1", status: {en: "Ongoing", tr: "Devam ediyor"}}
+    - {title: "Anadili Türkçe Olan Bireyler İçin Semantik Sözel Akıcılık Verisi Toplamaya Yönelik Çevrim İçi Araç Geliştirme", student: Hüseyin Tunç, program: "TÜBİTAK 2209-A 2024/1"}
+  links:
+    ORCID: https://orcid.org/0000-0003-4023-1850
+    GitHub: https://github.com/rykostas
+    LinkedIn: https://linkedin.com/in/rykostas
+  alumni_of: [University of Edinburgh, University of Essex, Marmara University]
+  works_for: [Gümüşhane University]

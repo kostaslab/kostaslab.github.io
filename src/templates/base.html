@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}</title>
+{% if description %}<meta name="description" content="{{ description }}">{% endif %}
+{% if noindex %}<meta name="robots" content="noindex">{% else %}<meta name="robots" content="index, follow, max-image-preview:large">{% endif %}
+<link rel="canonical" href="{{ canonical }}">
+{% if not noindex %}
+{% for l, href in alternates.items() %}<link rel="alternate" hreflang="{{ l }}" href="{{ href }}">
+{% endfor %}<link rel="alternate" hreflang="x-default" href="{{ alternates.en }}">
+{% endif %}
+{% if site.google_site_verification %}<meta name="google-site-verification" content="{{ site.google_site_verification }}">{% endif %}
+{% if site.bing_site_verification %}<meta name="msvalidate.01" content="{{ site.bing_site_verification }}">{% endif %}
+<meta name="author" content="KOSTAS Lab">
+<meta name="theme-color" content="#17305f" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c1628" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+
+<meta property="og:site_name" content="KOSTAS Lab">
+<meta property="og:type" content="{{ og_type or 'website' }}">
+<meta property="og:title" content="{{ title }}">
+{% if description %}<meta property="og:description" content="{{ description }}">{% endif %}
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:image" content="{{ base }}{{ og_image or '/assets/img/og-image.png' }}">
+<meta property="og:locale" content="{{ 'tr_TR' if lang == 'tr' else 'en_GB' }}">
+<meta property="og:locale:alternate" content="{{ 'en_GB' if lang == 'tr' else 'tr_TR' }}">
+<meta name="twitter:card" content="{{ 'summary' if og_image else 'summary_large_image' }}">
+<meta name="twitter:title" content="{{ title }}">
+{% if description %}<meta name="twitter:description" content="{{ description }}">{% endif %}
+<meta name="twitter:image" content="{{ base }}{{ og_image or '/assets/img/og-image.png' }}">
+
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css">
+{% if ld %}<script type="application/ld+json">{{ json(ld) }}</script>{% endif %}
+</head>
+<body class="page-{{ page_id.split(':')[0] }}">
+<a class="skip" href="#main">{{ s('skip') }}</a>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="{{ url('home') }}" aria-label="KOSTAS Lab — {{ s('nav_home') }}">
+      <img src="/assets/img/logo.png" alt="" width="36" height="35">
+      <span>KOSTAS<b>Lab</b></span>
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav">{{ s('menu') }}</button>
+    <nav id="nav" class="nav" aria-label="{{ s('menu') }}">
+      <a href="{{ url('home') }}#research">{{ s('nav_research') }}</a>
+      <a href="{{ url('home') }}#people">{{ s('nav_people') }}</a>
+      <a href="{{ url('publications') }}"{% if page_id == 'publications' %} aria-current="page"{% endif %}>{{ s('nav_pubs') }}</a>
+      <a href="{{ url('home') }}#projects">{{ s('nav_projects') }}</a>
+      <a href="{{ url('home') }}#news">{{ s('nav_news') }}</a>
+      <a href="{{ url('home') }}#contact">{{ s('nav_contact') }}</a>
+      <a class="lang" href="{{ alternates[other_lang] | replace(base, '') }}" hreflang="{{ other_lang }}" lang="{{ other_lang }}" title="{{ s('lang_switch_label') }}">{{ s('lang_switch') }}</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+{% block main %}{% endblock %}
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-brand"><img src="/assets/img/logo.png" alt="" width="28" height="27"> KOSTAS Lab</p>
+      <p>{{ s('footer_note') }}</p>
+      <p>{{ t(site.location) }}</p>
+    </div>
+    <ul class="footer-links">
+      {% for p in people %}<li><a href="{{ url('person:' ~ p.id) }}">{{ p.honorific }} {{ t(p.name) }}</a></li>{% endfor %}
+      <li><a href="{{ url('publications') }}">{{ s('nav_pubs') }}</a></li>
+      <li><a href="{{ alternates[other_lang] | replace(base, '') }}" hreflang="{{ other_lang }}" lang="{{ other_lang }}">{{ s('lang_switch') }}</a></li>
+    </ul>
+    <p class="copy">© {{ site.founded }}{% if year > site.founded %}–{{ year }}{% endif %} KOSTAS Lab</p>
+  </div>
+</footer>
+<script src="/assets/js/site.js" defer></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

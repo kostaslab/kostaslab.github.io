@@ -1,0 +1,30 @@
+# Haberler (yeniden eskiye) / News (newest first). date: YYYY-MM veya YYYY
+# Laboratuvar öncesi işlerde haberi yapan üyeyi ve kurumu belirtin.
+- date: "2026-11"
+  text: {en: "KOSTAS Lab founded and website launched.", tr: "KOSTAS Lab kuruldu ve web sitesi yayına girdi."}
+- date: "2026-10"
+  text: {en: "Kahraman presented “Externally Validating the IoTDevID Device Identification Methodology”, with Mike Just and Michael A. Lones (Heriot-Watt University), at SINCONF 2026.", tr: "Kahraman, Mike Just ve Michael A. Lones (Heriot-Watt Üniversitesi) ile yazdıkları “Externally Validating the IoTDevID Device Identification Methodology” bildirisini SINCONF 2026'da sundu."}
+  link: "https://arxiv.org/abs/2307.08679"
+- date: "2026-04"
+  text: {en: "Kahraman and co-authors presented three papers on IoT device identification and Turkish offline LLMs at ICADA 2026.", tr: "Kahraman ve ortak yazarları, IoT cihaz tanıma ve Türkçe çevrimdışı LLM'ler üzerine üç bildiriyi ICADA 2026'da sundu."}
+  link: "https://icada.com.tr/en/"
+- date: "2026"
+  text: {en: "Rabia and co-authors Pinar Bozbeyoglu, Elif Esra Altuner and Muzaffer Elmas published three book chapters on AI for nanomaterials and nanobiotechnology with IGI Global.", tr: "Rabia ile ortak yazarları Pinar Bozbeyoglu, Elif Esra Altuner ve Muzaffer Elmas, nanomalzeme ve nanobiyoteknoloji için yapay zekâ üzerine üç kitap bölümünü IGI Global'de yayımladı."}
+- date: "2025-10"
+  text: {en: "GeMID, building on Kahraman's PhD at Heriot-Watt University (with Rabia, Mike Just and Michael A. Lones), accepted in Elsevier Internet of Things (Q1).", tr: "Kahraman'ın Heriot-Watt Üniversitesi'ndeki doktorasına dayanan GeMID (Rabia, Mike Just ve Michael A. Lones ile) Elsevier Internet of Things dergisinde kabul edildi (Q1)."}
+  link: "https://doi.org/10.1016/j.iot.2025.101806"
+- date: "2025-07"
+  text: {en: "IoTGeM, from Kahraman's PhD research at Heriot-Watt University with Mike Just and Michael A. Lones, accepted in Computer Networks (Q1).", tr: "Kahraman'ın Heriot-Watt Üniversitesi'nde Mike Just ve Michael A. Lones ile yürüttüğü doktora araştırmasından çıkan IoTGeM, Computer Networks dergisinde kabul edildi (Q1)."}
+  link: "https://doi.org/10.1016/j.comnet.2025.111550"
+- date: "2025-06"
+  text: {en: "Rabia and Kahraman's paper on graph-based floor separation accepted at IPIN 2025.", tr: "Rabia ve Kahraman'ın graf tabanlı kat ayrımı bildirisi IPIN 2025'te kabul edildi."}
+  link: "https://arxiv.org/abs/2505.08088"
+- date: "2025-01"
+  text: {en: "“Individual Packet Features are a Risk to Model Generalisation”, by Kahraman, Mike Just and Michael A. Lones (Heriot-Watt University), accepted in IEEE Networking Letters.", tr: "Kahraman, Mike Just ve Michael A. Lones'un (Heriot-Watt Üniversitesi) “Individual Packet Features are a Risk to Model Generalisation” makalesi IEEE Networking Letters'ta kabul edildi."}
+  link: "https://ieeexplore.ieee.org/abstract/document/10824899"
+- date: "2024-10"
+  text: {en: "Rabia joined Gümüşhane University as a lecturer.", tr: "Rabia, Gümüşhane Üniversitesi'nde öğretim görevlisi olarak göreve başladı."}
+- date: "2024-09"
+  text: {en: "Kahraman started as National Education Expert at YYEGM.", tr: "Kahraman, YYEGM'de Milli Eğitim Uzmanı olarak göreve başladı."}
+- date: "2024"
+  text: {en: "Rabia completed her PhD in Informatics at the University of Edinburgh.", tr: "Rabia, Edinburgh Üniversitesi'nde Bilişim doktorasını tamamladı."}

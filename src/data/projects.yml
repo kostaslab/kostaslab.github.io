@@ -1,0 +1,46 @@
+# Projeler ve açık kaynak araçlar / Projects and open-source tools
+# kind: software | funded
+# origin: geliştirildiği yer (site.yml → origins). Laboratuvarda geliştirilen yeni araçlar için: lab
+# Not: Kurumların (ör. Bakanlık) resmî projeleri burada değil, ilgili üyenin profilinde "Deneyim" altında yer alır.
+- name: IoTDevID
+  kind: software
+  origin: hw
+  members: [kahraman]
+  text: {en: "Behaviour-based IoT device identification from individual packets, including non-IP and low-energy protocols. From Kahraman's PhD, with Dr. Mike Just and Dr. Michael A. Lones.", tr: "Tekil paketlerden davranış tabanlı IoT cihaz tanıma; IP dışı ve düşük enerjili protokoller dahil. Kahraman'ın doktorasından; Dr. Mike Just ve Dr. Michael A. Lones ile."}
+  links: {Code: "https://github.com/kahramankostas/IoTDevIDv2", Paper: "https://doi.org/10.1109/JIOT.2022.3191951"}
+- name: IoTGeM
+  kind: software
+  origin: hw
+  members: [kahraman]
+  text: {en: "Behaviour-based attack detection for IoT with a leakage-free evaluation pipeline. With Dr. Mike Just and Dr. Michael A. Lones.", tr: "Veri sızıntısı olmayan bir değerlendirme hattıyla IoT için davranış tabanlı saldırı tespiti. Dr. Mike Just ve Dr. Michael A. Lones ile."}
+  links: {Code: "https://github.com/kahramankostas/IoTGeM", Paper: "https://doi.org/10.1016/j.comnet.2025.111550"}
+- name: GeMID
+  kind: software
+  origin: hw
+  members: [kahraman, rabia]
+  text: {en: "Device identification models selected for how well they generalise to unseen networks, not just held-out data. With Dr. Mike Just and Dr. Michael A. Lones.", tr: "Yalnızca ayrılmış test verisinde değil, görülmemiş ağlarda da genellenebilen cihaz tanıma modelleri. Dr. Mike Just ve Dr. Michael A. Lones ile."}
+  links: {Code: "https://github.com/kahramankostas/GeMID", Paper: "https://doi.org/10.1016/j.iot.2025.101806"}
+- name: Turkish Verbal Fluency Analysis
+  kind: software
+  origin: ed
+  members: [rabia]
+  text: {en: "Automatic detection of semantic clusters and switches in Turkish verbal fluency data, developed during Rabia's PhD (Python, scikit-learn).", tr: "Türkçe sözel akıcılık verisinde anlamsal kümeleri ve geçişleri otomatik tespit eden araçlar; Rabia'nın doktorası sırasında geliştirildi (Python, scikit-learn)."}
+  links: {Project: "https://rabiayasakostas.com/projects/turkish-verbal-fluency-analysis"}
+- name: Floor separation
+  kind: software
+  origin: lab
+  members: [rabia, kahraman]
+  text: {en: "Unsupervised floor separation from WiFi trajectories with Node2Vec embeddings and clustering.", tr: "Node2Vec gömmeleri ve kümeleme ile WiFi yörüngelerinden denetimsiz kat ayrımı (IPIN 2025)."}
+  links: {Code: "https://github.com/kahramankostas/IPIN2025", Paper: "https://arxiv.org/abs/2505.08088"}
+- name: TRfallacy
+  kind: software
+  origin: collab
+  members: [kahraman]
+  text: {en: "A benchmark for measuring logical reasoning in Turkish offline language models via fallacy detection, with İnanç Feridun Canci, Zeynep Gizem Emir Shahbazov and Edibe Yılmaz.", tr: "Türkçe çevrimdışı dil modellerinde akıl yürütmeyi safsata tespitiyle ölçen değerlendirme seti; İnanç Feridun Canci, Zeynep Gizem Emir Shahbazov ve Edibe Yılmaz ile."}
+  links: {Code: "https://github.com/kahramankostas/TRfallacy/"}
+- name: TurkCap
+  kind: funded
+  origin: gumushane
+  members: [rabia]
+  funder: "TÜBİTAK 2209-A"
+  text: {en: "Culturally aware Turkish image captioning: an undergraduate research project by Hasan Hüseyin Keskin at Gümüşhane University, supervised by Dr. Rabia Yaşa Koştaş (2025, ongoing).", tr: "Kültürel bağlama duyarlı Türkçe görüntü altyazılama: Hasan Hüseyin Keskin'in Gümüşhane Üniversitesi'nde, Dr. Rabia Yaşa Koştaş danışmanlığında yürüttüğü lisans araştırma projesi (2025, devam ediyor)."}

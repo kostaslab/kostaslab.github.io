@@ -1,0 +1,84 @@
+# Arayüz metinleri / Interface strings
+home_title: {en: "KOSTAS Lab — Knowledge-Oriented Systems for Technology, AI and Science", tr: "KOSTAS Lab — Teknoloji, Yapay Zekâ ve Bilim için Bilgi Odaklı Sistemler"}
+nav_home: {en: "Home", tr: "Ana sayfa"}
+nav_research: {en: "Research", tr: "Araştırma"}
+nav_people: {en: "People", tr: "Ekip"}
+nav_pubs: {en: "Publications", tr: "Yayınlar"}
+nav_projects: {en: "Projects", tr: "Projeler"}
+nav_news: {en: "News", tr: "Haberler"}
+nav_contact: {en: "Contact", tr: "İletişim"}
+skip: {en: "Skip to content", tr: "İçeriğe geç"}
+menu: {en: "Menu", tr: "Menü"}
+lang_switch: {en: "Türkçe", tr: "English"}
+lang_switch_label: {en: "Bu sayfanın Türkçesi", tr: "English version of this page"}
+hero_cta_pubs: {en: "Browse publications", tr: "Yayınlara göz at"}
+hero_cta_people: {en: "Meet the team", tr: "Ekiple tanışın"}
+acrostic_note: {en: "Read the first letters downwards.", tr: "İlk harfleri yukarıdan aşağı okuyun."}
+about_h: {en: "What we work on", tr: "Ne üzerinde çalışıyoruz"}
+stat_pubs: {en: "publications by members", tr: "üyelerin yayını"}
+stat_q1: {en: "of them in Q1 journals", tr: "tanesi Q1 dergilerde"}
+stat_code: {en: "papers with open code", tr: "açık kodlu çalışma"}
+stat_founded: {en: "KOSTAS Lab founded", tr: "KOSTAS Lab kuruldu"}
+research_h: {en: "Research themes", tr: "Araştırma alanları"}
+research_lead: {en: "Five lines of work. Most build on research we did before founding the lab; each links to its papers.", tr: "Beş çalışma hattı. Çoğu, laboratuvarı kurmadan önce yaptığımız araştırmalara dayanıyor; her biri ilgili yayınlara bağlanıyor."}
+papers_n: {en: "{n} papers", tr: "{n} yayın"}
+paper_1: {en: "1 paper", tr: "1 yayın"}
+people_h: {en: "People", tr: "Ekip"}
+people_lead: {en: "The lab is currently two researchers. We are open to students and collaborators.", tr: "Laboratuvar şu an iki araştırmacıdan oluşuyor. Öğrencilere ve iş birliklerine açığız."}
+view_profile: {en: "Full profile", tr: "Profilin tamamı"}
+selected_pubs: {en: "Selected publications", tr: "Öne çıkan yayınlar"}
+all_pubs: {en: "All publications", tr: "Tüm yayınlar"}
+projects_h: {en: "Projects and open-source tools", tr: "Projeler ve açık kaynak araçlar"}
+projects_lead: {en: "Tools and projects by lab members. Each one shows where it was developed.", tr: "Üyelerimizin araç ve projeleri. Her birinde nerede geliştirildiği belirtilmiştir."}
+developed_at: {en: "Developed at", tr: "Geliştirildiği yer"}
+origin_title: {en: "Where the work was done", tr: "Çalışmanın yapıldığı yer"}
+filter_origin: {en: "Done at", tr: "Yapıldığı yer"}
+news_lead: {en: "News from lab members, including work done before the lab was founded.", tr: "Üyelerimizden haberler; laboratuvar kurulmadan önceki çalışmalar dahil."}
+collab_h: {en: "Collaborators and previous institutions", tr: "İş birlikçiler ve önceki kurumlar"}
+collab_lead: {en: "Most of the work on this site was done with these people and at these institutions. Listing them here is a credit, not a claim of partnership.", tr: "Bu sitedeki çalışmaların çoğu bu kişilerle ve bu kurumlarda yapıldı. Burada anılmaları bir teşekkürdür; resmî bir ortaklık anlamına gelmez."}
+about_lab_h: {en: "About the lab", tr: "Laboratuvar hakkında"}
+kind_software: {en: "Open source", tr: "Açık kaynak"}
+kind_funded: {en: "Funded project", tr: "Destekli proje"}
+kind_platform: {en: "Platform", tr: "Platform"}
+news_h: {en: "News", tr: "Haberler"}
+contact_h: {en: "Work with us", tr: "Bizimle çalışın"}
+email_label: {en: "Email", tr: "E-posta"}
+copy: {en: "Copy", tr: "Kopyala"}
+copied: {en: "Copied", tr: "Kopyalandı"}
+pubs_title: {en: "Publications", tr: "Yayınlar"}
+pubs_desc: {en: "{n} publications by KOSTAS Lab members on IoT security, Turkish NLP, verbal fluency and indoor positioning, with code, DOIs and BibTeX.", tr: "KOSTAS Lab üyelerinin IoT güvenliği, Türkçe doğal dil işleme, sözel akıcılık ve konumlandırma üzerine {n} yayını; kod, DOI ve BibTeX ile."}
+pubs_lead: {en: "Journal articles, conference papers and book chapters by lab members, with all co-authors. Lab members' names link to their profiles.", tr: "Laboratuvar üyelerinin dergi makaleleri, bildirileri ve kitap bölümleri. Üye isimleri profillerine bağlantılıdır."}
+search_placeholder: {en: "Search title, author or venue", tr: "Başlık, yazar veya yayın yerinde ara"}
+search_label: {en: "Search publications", tr: "Yayınlarda ara"}
+filter_member: {en: "Author", tr: "Yazar"}
+filter_type: {en: "Type", tr: "Tür"}
+filter_topic: {en: "Theme", tr: "Alan"}
+filter_all: {en: "All", tr: "Tümü"}
+showing: {en: "Showing {n} of {total}", tr: "{total} yayından {n} tanesi gösteriliyor"}
+no_results: {en: "No publication matches these filters. Clear the search or pick “All” to see the full list.", tr: "Bu filtrelere uyan yayın yok. Tam listeyi görmek için aramayı temizleyin ya da “Tümü”nü seçin."}
+reset: {en: "Clear filters", tr: "Filtreleri temizle"}
+cite: {en: "Cite", tr: "Atıf"}
+copy_bibtex: {en: "Copy BibTeX", tr: "BibTeX'i kopyala"}
+type_journal: {en: "Journal article", tr: "Dergi makalesi"}
+type_conference: {en: "Conference paper", tr: "Bildiri"}
+type_chapter: {en: "Book chapter", tr: "Kitap bölümü"}
+type_abstract: {en: "Extended abstract", tr: "Genişletilmiş özet"}
+profile_about: {en: "About", tr: "Hakkında"}
+profile_interests: {en: "Research interests", tr: "Araştırma ilgi alanları"}
+profile_pubs: {en: "Publications", tr: "Yayınlar"}
+profile_projects: {en: "Projects", tr: "Projeler"}
+profile_teaching: {en: "Teaching", tr: "Verilen dersler"}
+profile_supervision: {en: "Supervision", tr: "Danışmanlık"}
+profile_education: {en: "Education", tr: "Eğitim"}
+profile_experience: {en: "Experience", tr: "Deneyim"}
+profile_links: {en: "Profiles", tr: "Profiller"}
+student: {en: "Student", tr: "Öğrenci"}
+cv: {en: "Download CV", tr: "Özgeçmiş (PDF)"}
+cv_en: {en: "CV (English)", tr: "CV (İngilizce)"}
+cv_tr: {en: "CV (Turkish)", tr: "Özgeçmiş (Türkçe)"}
+personal_site: {en: "Personal website", tr: "Kişisel web sitesi"}
+back_people: {en: "All people", tr: "Tüm ekip"}
+footer_note: {en: "Knowledge-Oriented Systems for Technology, AI and Science.", tr: "Knowledge-Oriented Systems for Technology, AI and Science."}
+months:
+  en: [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
+  tr: [Oca, Şub, Mar, Nis, May, Haz, Tem, Ağu, Eyl, Eki, Kas, Ara]

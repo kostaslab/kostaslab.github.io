@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% from "_macros.html" import pub_item with context %}
+{% block main %}
+<section class="page-head">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="breadcrumb"><a href="{{ url('home') }}">KOSTAS Lab</a> / <span>{{ s('nav_pubs') }}</span></nav>
+    <h1 class="h1">{{ s('pubs_title') }}</h1>
+    <p class="lead">{{ s('pubs_lead') }}</p>
+    <p class="context-note">{{ t(site.context_note) }}</p>
+  </div>
+</section>
+
+<section class="section pubs-page">
+  <div class="wrap">
+    <form class="filters" role="search" onsubmit="return false">
+      <label class="search">
+        <span class="sr-only">{{ s('search_label') }}</span>
+        <input type="search" name="q" placeholder="{{ s('search_placeholder') }}" autocomplete="off">
+      </label>
+      <fieldset>
+        <legend>{{ s('filter_member') }}</legend>
+        <label><input type="radio" name="member" value="" checked> {{ s('filter_all') }}</label>
+        {% for p in people %}<label><input type="radio" name="member" value="{{ p.id }}"> {{ t(p.name) }}</label>{% endfor %}
+      </fieldset>
+      <fieldset>
+        <legend>{{ s('filter_type') }}</legend>
+        <label><input type="radio" name="type" value="" checked> {{ s('filter_all') }}</label>
+        {% for ty in types %}<label><input type="radio" name="type" value="{{ ty }}"> {{ type_label(ty) }}</label>{% endfor %}
+      </fieldset>
+      <fieldset>
+        <legend>{{ s('filter_topic') }}</legend>
+        <label><input type="radio" name="topic" value="" checked> {{ s('filter_all') }}</label>
+        {% for r in research %}<label><input type="radio" name="topic" value="{{ r.topic }}"> {{ t(r.title) }}</label>{% endfor %}
+      </fieldset>
+      <fieldset>
+        <legend>{{ s('filter_origin') }}</legend>
+        <label><input type="radio" name="origin" value="" checked> {{ s('filter_all') }}</label>
+        {% for o in origins_used %}<label><input type="radio" name="origin" value="{{ o }}"> {{ t(site.origins[o].label) }}</label>{% endfor %}
+      </fieldset>
+      <p class="count" aria-live="polite" data-template="{{ s('showing') }}" data-total="{{ pubs | length }}">{{ s('showing').format(n=pubs|length, total=pubs|length) }}</p>
+    </form>
+
+    <div class="pub-years">
+    {% for y in years %}
+      <section class="year-group" data-year-group="{{ y }}">
+        <h2 class="year">{{ y }}</h2>
+        <ol class="pubs">
+          {% for p in pubs if p.year == y %}{{ pub_item(p) }}{% endfor %}
+        </ol>
+      </section>
+    {% endfor %}
+    </div>
+    <div class="empty" hidden>
+      <p>{{ s('no_results') }}</p>
+      <button type="button" class="btn" data-reset>{{ s('reset') }}</button>
+    </div>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}<script src="/assets/js/publications.js" defer></script>{% endblock %}

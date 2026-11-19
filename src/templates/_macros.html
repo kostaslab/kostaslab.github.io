@@ -1,0 +1,23 @@
+{% macro pub_item(p, show_year=false) %}
+<li class="pub" id="{{ p.id }}" data-year="{{ p.year }}" data-type="{{ p.type }}" data-members="{{ p.members | join(' ') }}" data-topics="{{ p.topics | join(' ') }}" data-origin="{{ p.origin }}">
+  <p class="pub-meta">
+    <span class="tag tag-{{ p.type }}">{{ type_label(p.type) }}</span>
+    {% if p.q1 %}<span class="tag tag-q1" title="Q1">Q1</span>{% endif %}
+    {% if show_year %}<span class="pub-year">{{ p.year }}</span>{% endif %}
+    <span class="origin origin-{{ p.origin }}" title="{{ s('origin_title') }}">{{ t(site.origins[p.origin].label) }}</span>
+  </p>
+  <h3 class="pub-title">{% if p.url %}<a href="{{ p.url }}" rel="noopener">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</h3>
+  <p class="pub-authors">{{ authors_html(p.authors) }}</p>
+  <p class="pub-venue">{{ p.venue }}{% if not show_year %}, {{ p.year }}{% endif %}</p>
+  <div class="pub-actions">
+    {% for label, href in p.all_links.items() %}<a class="chip" href="{{ href }}" rel="noopener">{{ label }}</a>{% endfor %}
+    <details class="cite">
+      <summary class="chip">{{ s('cite') }}</summary>
+      <div class="cite-box">
+        <pre><code>{{ p.bibtex }}</code></pre>
+        <button type="button" class="copy-btn" data-copy-label="{{ s('copied') }}">{{ s('copy_bibtex') }}</button>
+      </div>
+    </details>
+  </div>
+</li>
+{% endmacro %}

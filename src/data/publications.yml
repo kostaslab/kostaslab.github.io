@@ -1,0 +1,204 @@
+# Yayın listesi / Publication list
+# Yeni yayın eklemek için bir blok kopyalayıp en üste yapıştırın, sonra `python3 src/build.py` çalıştırın.
+# type: journal | conference | chapter | abstract
+# origin: çalışmanın yapıldığı yer (site.yml → origins). Laboratuvarda yapılan yeni işler için: lab
+# members: laboratuvar üyelerinin kimlikleri (people.yml içindeki id) – filtreleme ve profil sayfaları için
+# links: label → url  (label örnekleri: DOI, arXiv, Code, Slides, PDF, IEEE Xplore)
+
+- id: kostas2026validating
+  title: Externally Validating the IoTDevID Device Identification Methodology
+  authors: [Kahraman Kostas, Mike Just, Michael A. Lones]
+  venue: 18th International Conference on Security of Information and Networks (SINCONF 2026)
+  year: 2026
+  type: conference
+  origin: hw
+  members: [kahraman]
+  topics: [iot]
+  links:
+    arXiv: https://arxiv.org/abs/2307.08679
+    Code: https://github.com/kahramankostas/IoTDevID-CIC
+
+- id: kostas2026cnn
+  title: "CNN-based IoT Device Identification: A Comparative Study on Payload vs. Fingerprint"
+  authors: [Kahraman Kostas]
+  venue: 6th International Artificial Intelligence and Data Science Congress (ICADA 2026)
+  year: 2026
+  type: conference
+  origin: hw
+  members: [kahraman]
+  topics: [iot]
+  links:
+    arXiv: https://arxiv.org/abs/2304.13894
+    Code: https://github.com/kahramankostas/CNN-based-IoT-Device-Identification
+    Slides: https://kahramankostas.github.io/presentation/7.pdf
+
+- id: yilmaz2026silly
+  title: "There Are No Silly Questions: Evaluation of Offline LLM Capabilities from a Turkish Perspective"
+  authors: [Edibe Yılmaz, Kahraman Kostas]
+  venue: 6th International Artificial Intelligence and Data Science Congress (ICADA 2026)
+  year: 2026
+  type: conference
+  origin: collab
+  members: [kahraman]
+  topics: [nlp]
+  links:
+    arXiv: https://arxiv.org/abs/2603.09996
+    Code: https://github.com/edibeselvi/SillyQuestions/
+    Slides: https://kahramankostas.github.io/presentation/15.pdf
+
+- id: canci2026fallacy
+  title: Measuring Logical Reasoning in Turkish Offline Language Models via Fallacy Detection
+  authors: [İnanç Feridun Canci, Zeynep Gizem Emir Shahbazov, Edibe Yılmaz, Kahraman Kostas]
+  venue: 6th International Artificial Intelligence and Data Science Congress (ICADA 2026)
+  year: 2026
+  type: conference
+  origin: collab
+  members: [kahraman]
+  topics: [nlp]
+  links:
+    PDF: https://www.researchgate.net/profile/Kahraman-Kostas/publication/401344591_Measuring_Logical_Reasoning_in_Turkish_Offline_Language_Models_via_Fallacy_Detection
+    Code: https://github.com/kahramankostas/TRfallacy/
+    Slides: https://kahramankostas.github.io/presentation/40.pdf
+
+- id: kostas2026nanocarriers
+  title: Smart Nanocarriers and AI-Driven Release Systems for Targeted Antibiotic Delivery
+  authors: [Rabia Yasa Kostas, Pinar Bozbeyoglu, Elif Esra Altuner, Muzaffer Elmas]
+  venue: "AI, Nanobiotechnology, and the Future of Precision Antibiotics (IGI Global)"
+  year: 2026
+  type: chapter
+  origin: collab
+  members: [rabia]
+  topics: [materials]
+  doi: 10.4018/979-8-3373-5268-8.ch007
+
+- id: bozbeyoglu2026bionano
+  title: Artificial Intelligence-Assisted Design and Optimization of Bio-Nanocomposites for Biomedical and Environmental Applications
+  authors: [Pinar Bozbeyoglu, Rabia Yasa Kostas, Elif Esra Altuner, Muzaffer Elmas]
+  venue: Applications of AI in Materials Science (IGI Global)
+  year: 2026
+  type: chapter
+  origin: collab
+  members: [rabia]
+  topics: [materials]
+  doi: 10.4018/979-8-3373-6127-7.ch007
+
+- id: kostas2026desulfurization
+  title: Artificial Intelligence Nanocomposite Synergy for Next-Generation Fuel Desulfurization
+  authors: [Rabia Yasa Kostas, Pinar Bozbeyoglu, Elif Esra Altuner, Muzaffer Elmas]
+  venue: Evolving Approaches to Fuel Desulfurization With Nanocomposites (IGI Global)
+  year: 2026
+  type: chapter
+  origin: collab
+  members: [rabia]
+  topics: [materials]
+  doi: 10.4018/979-8-3373-5966-3.ch010
+
+- id: kostas2025gemid
+  title: "GeMID: Generalizable Models for IoT Device Identification"
+  authors: [Kahraman Kostas, Rabia Yasa Kostas, Mike Just, Michael A. Lones]
+  venue: Internet of Things (Elsevier), Vol. 30
+  year: 2025
+  type: journal
+  origin: hw
+  q1: true
+  featured: true
+  members: [kahraman, rabia]
+  topics: [iot]
+  doi: 10.1016/j.iot.2025.101806
+  links:
+    arXiv: https://arxiv.org/abs/2411.14441
+    Code: https://github.com/kahramankostas/GeMID
+
+- id: kostas2025iotgem
+  title: "IoTGeM: Generalisable Models for Behaviour-Based IoT Attack Detection"
+  authors: [Kahraman Kostas, Mike Just, Michael A. Lones]
+  venue: Computer Networks (Elsevier), Vol. 262
+  year: 2025
+  type: journal
+  origin: hw
+  q1: true
+  featured: true
+  members: [kahraman]
+  topics: [iot]
+  doi: 10.1016/j.comnet.2025.111550
+  links:
+    Code: https://github.com/kahramankostas/IoTGeM
+
+- id: kostas2025ipf
+  title: Individual Packet Features are a Risk to Model Generalisation in ML-Based Intrusion Detection
+  authors: [Kahraman Kostas, Mike Just, Michael A. Lones]
+  venue: IEEE Networking Letters
+  year: 2025
+  type: journal
+  origin: hw
+  q1: true
+  featured: true
+  members: [kahraman]
+  topics: [iot]
+  links:
+    IEEE Xplore: https://ieeexplore.ieee.org/abstract/document/10824899
+    Code: https://github.com/kahramankostas/IPF
+
+- id: kostas2025floor
+  title: Graph-Based Floor Separation Using Node Embeddings and Clustering of WiFi Trajectories
+  authors: [Rabia Yasa Kostas, Kahraman Kostas]
+  venue: preprint
+  year: 2025
+  type: conference
+  origin: lab
+  featured: true
+  members: [rabia, kahraman]
+  topics: [positioning]
+  links:
+    arXiv: https://arxiv.org/abs/2505.08088
+    Code: https://github.com/kahramankostas/IPIN2025
+
+- id: kostas2024svf
+  title: "Semantic verbal fluency in native speakers of Turkish: A systematic review of category use, scoring metrics and normative data in healthy individuals"
+  authors: [Rabia Yasa Kostas, Kahraman Kostas, Sarah E. MacPherson, Maria K. Wolters]
+  venue: Journal of Clinical and Experimental Neuropsychology, 46(4), 319–336
+  year: 2024
+  type: journal
+  origin: ed
+  q1: true
+  featured: true
+  members: [rabia, kahraman]
+  topics: [cognition, nlp]
+  doi: 10.1080/13803395.2024.2331827
+
+- id: meng2023smartspeakers
+  title: Multi-User Smart Speakers – A Narrative Review of Concerns and Problematic Interactions
+  authors: [Nicole Meng-Schneider, Rabia Yasa Kostas, Kami Vaniea, Maria K. Wolters]
+  venue: Extended Abstracts of the 2023 CHI Conference on Human Factors in Computing Systems
+  year: 2023
+  type: abstract
+  origin: ed
+  members: [rabia]
+  topics: [cognition]
+  doi: 10.1145/3544549.3585689
+
+- id: kostas2022iotdevid
+  title: "IoTDevID: A Behavior-Based Device Identification Method for the IoT"
+  authors: [Kahraman Kostas, Mike Just, Michael A. Lones]
+  venue: IEEE Internet of Things Journal
+  year: 2022
+  type: journal
+  origin: hw
+  q1: true
+  members: [kahraman]
+  topics: [iot]
+  doi: 10.1109/JIOT.2022.3191951
+  links:
+    arXiv: https://arxiv.org/abs/2102.08866
+    Code: https://github.com/kahramankostas/IoTDevIDv2
+
+- id: kostas2022wifi
+  title: WiFi Based Distance Estimation Using Supervised Machine Learning
+  authors: [Kahraman Kostas, Rabia Yasa Kostas, Francisco Zampella, Firas Alsehly]
+  venue: 2022 IEEE 12th International Conference on Indoor Positioning and Indoor Navigation (IPIN)
+  year: 2022
+  type: conference
+  origin: huawei
+  members: [kahraman, rabia]
+  topics: [positioning]
+  doi: 10.1109/IPIN54987.2022.9918128

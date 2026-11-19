@@ -1,489 +1,621 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KOSTAS Lab - Knowledge-Oriented Systems for Technology, AI and Science</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header Styles */
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo-container img {
-            width: 60px;
-            height: 60px;
-            transition: transform 0.3s ease;
-        }
-
-        .logo-container img:hover {
-            transform: scale(1.1);
-        }
-
-        .logo-text h1 {
-            color: #1e3a8a;
-            font-size: 1.8rem;
-            font-weight: bold;
-        }
-
-        .logo-text p {
-            color: #22c55e;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: #1e3a8a;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-menu a:hover {
-            color: #22c55e;
-            transform: translateY(-2px);
-        }
-
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background: #22c55e;
-            transition: width 0.3s ease;
-        }
-
-        .nav-menu a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #1e3a8a 0%, #22c55e 100%);
-            color: white;
-            padding: 150px 0 100px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="circuit" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.1)"/><path d="M2,2 L18,2 M2,2 L2,18" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23circuit)"/></svg>') repeat;
-            opacity: 0.1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h2 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            animation: fadeInUp 1s ease 0.2s both;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: 15px 30px;
-            border: 2px solid white;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            animation: fadeInUp 1s ease 0.4s both;
-        }
-
-        .cta-button:hover {
-            background: white;
-            color: #1e3a8a;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Section Styles */
-        .section {
-            padding: 80px 0;
-        }
-
-        .section h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: #1e3a8a;
-            position: relative;
-        }
-
-        .section h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, #1e3a8a, #22c55e);
-            border-radius: 2px;
-        }
-
-        /* About Section */
-        .about {
-            background: white;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            margin-top: 2rem;
-        }
-
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-        }
-
-        .about-features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        .feature-card {
-            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(30, 58, 138, 0.1);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border-color: #22c55e;
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #1e3a8a, #22c55e);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 1.5rem;
-            color: white;
-        }
-
-        /* Research Section */
-        .research {
-            background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
-        }
-
-        .research-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .research-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            border-left: 4px solid #22c55e;
-        }
-
-        .research-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .research-card h3 {
-            color: #1e3a8a;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .research-card p {
-            color: #666;
-            line-height: 1.7;
-        }
-
-        /* Publications Section */
-        .publications {
-            background: white;
-        }
-
-        .publication-item {
-            background: #f8fafc;
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-            border-radius: 10px;
-            border-left: 4px solid #1e3a8a;
-            transition: all 0.3s ease;
-        }
-
-        .publication-item:hover {
-            transform: translateX(10px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .publication-title {
-            font-weight: bold;
-            color: #1e3a8a;
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        .publication-authors {
-            color: #22c55e;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .publication-venue {
-            color: #666;
-            font-style: italic;
-        }
-
-        /* Contact Section */
-        .contact {
-            background: linear-gradient(135deg, #1e3a8a, #22c55e);
-            color: white;
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-top: 2rem;
-        }
-
-        .contact-info h3 {
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .contact-info p {
-            margin-bottom: 1rem;
-            opacity: 0.9;
-        }
-
-        .contact-form {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            font-size: 1rem;
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .submit-btn {
-            background: white;
-            color: #1e3a8a;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 25px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Footer */
-        footer {
-            background: #1a1a1a;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-
-            .hero h2 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .about-features {
-                grid-template-columns: 1fr;
-            }
-
-            .section h2 {
-                font-size: 2rem;
-            }
-        }
-
-        /* Scroll animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <nav class="container">
-            <div class="logo-container">
-                <img src="1.png" alt="KOSTAS Lab Logo">
-                <div class="logo-text">
-                    <h1>KOSTAS Lab</h1>
-                    <p>Knowledge-Oriented Systems for Technology, AI, and Science</p>
-                </div>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KOSTAS Lab — Knowledge-Oriented Systems for Technology, AI and Science</title>
+<meta name="description" content="KOSTAS Lab: research on generalisable machine learning for IoT security, Turkish NLP and offline LLMs, verbal fluency analysis and indoor positioning."><meta name="robots" content="index, follow, max-image-preview:large"><link rel="canonical" href="https://kostaslab.github.io/">
+<link rel="alternate" hreflang="en" href="https://kostaslab.github.io/">
+<link rel="alternate" hreflang="tr" href="https://kostaslab.github.io/tr/">
+<link rel="alternate" hreflang="x-default" href="https://kostaslab.github.io/">
+<meta name="author" content="KOSTAS Lab">
+<meta name="theme-color" content="#17305f" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c1628" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+
+<meta property="og:site_name" content="KOSTAS Lab">
+<meta property="og:type" content="website">
+<meta property="og:title" content="KOSTAS Lab — Knowledge-Oriented Systems for Technology, AI and Science">
+<meta property="og:description" content="KOSTAS Lab: research on generalisable machine learning for IoT security, Turkish NLP and offline LLMs, verbal fluency analysis and indoor positioning."><meta property="og:url" content="https://kostaslab.github.io/">
+<meta property="og:image" content="https://kostaslab.github.io/assets/img/og-image.png">
+<meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KOSTAS Lab — Knowledge-Oriented Systems for Technology, AI and Science">
+<meta name="twitter:description" content="KOSTAS Lab: research on generalisable machine learning for IoT security, Turkish NLP and offline LLMs, verbal fluency analysis and indoor positioning."><meta name="twitter:image" content="https://kostaslab.github.io/assets/img/og-image.png">
+
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css">
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "ResearchOrganization",
+   "@id": "https://kostaslab.github.io/#org",
+   "name": "KOSTAS Lab",
+   "alternateName": [
+    "Knowledge-Oriented Systems for Technology, AI and Science",
+    "KOSTAS Laboratuvarı",
+    "Kostas Lab"
+   ],
+   "url": "https://kostaslab.github.io/",
+   "logo": "https://kostaslab.github.io/assets/img/icon-512.png",
+   "image": "https://kostaslab.github.io/assets/img/og-image.png",
+   "description": "KOSTAS Lab (Knowledge-Oriented Systems for Technology, AI and Science) is a research lab led by Dr. Kahraman Kostas and Dr. Rabia Yaşa Koştaş, working on generalisable machine learning for IoT security, Turkish NLP and offline LLMs, cognitive language analytics and indoor positioning. KOSTAS Lab is an independent research group run by its two founders. It is not a legal entity and not a unit of any university or public institution; each member's institutional affiliation is listed on their profile.",
+   "foundingDate": "2026",
+   "email": "kahramankostas@gmail.com",
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Gümüşhane",
+    "addressCountry": "TR"
+   },
+   "founder": [
+    {
+     "@id": "https://kostaslab.github.io/people/kahraman-kostas/#person"
+    },
+    {
+     "@id": "https://kostaslab.github.io/people/rabia-yasa-kostas/#person"
+    }
+   ],
+   "member": [
+    {
+     "@id": "https://kostaslab.github.io/people/kahraman-kostas/#person"
+    },
+    {
+     "@id": "https://kostaslab.github.io/people/rabia-yasa-kostas/#person"
+    }
+   ],
+   "knowsAbout": [
+    "Generalisable IoT security",
+    "Turkish NLP and offline LLMs",
+    "Cognitive language analytics",
+    "Indoor positioning",
+    "AI for materials and nanobiotechnology"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://kostaslab.github.io/#website",
+   "url": "https://kostaslab.github.io/",
+   "name": "KOSTAS Lab",
+   "inLanguage": [
+    "en",
+    "tr"
+   ],
+   "publisher": {
+    "@id": "https://kostaslab.github.io/#org"
+   }
+  },
+  {
+   "@type": "Person",
+   "@id": "https://kostaslab.github.io/people/kahraman-kostas/#person",
+   "name": "Kahraman Kostas",
+   "alternateName": [
+    "Kahraman Koştaş",
+    "Kahraman Kostaş"
+   ],
+   "honorificPrefix": "Dr.",
+   "jobTitle": "National Education Expert (YYEGM, Ministry of National Education) and Instructor at Gümüşhane University",
+   "url": "https://kostaslab.github.io/people/kahraman-kostas/",
+   "image": "https://kostaslab.github.io/assets/img/kahraman-kostas.jpg",
+   "email": "mailto:kahramankostas@gmail.com",
+   "sameAs": [
+    "https://scholar.google.com/citations?user=XjOogr0AAAAJ",
+    "https://orcid.org/0000-0002-4696-1857",
+    "https://github.com/kahramankostas",
+    "https://www.linkedin.com/in/kkostas/",
+    "https://www.researchgate.net/profile/Kahraman-Kostas",
+    "https://www.webofscience.com/wos/author/record/JZT-7728-2024",
+    "https://www.scopus.com/authid/detail.uri?authorId=57222271214",
+    "https://x.com/kkostas",
+    "https://kahramankostas.github.io/"
+   ],
+   "knowsAbout": [
+    "IoT security",
+    "Device identification",
+    "Generalisable machine learning",
+    "Network forensics",
+    "Explainable AI",
+    "Indoor positioning",
+    "Offline LLMs"
+   ],
+   "alumniOf": [
+    {
+     "@type": "CollegeOrUniversity",
+     "name": "Heriot-Watt University"
+    },
+    {
+     "@type": "CollegeOrUniversity",
+     "name": "University of Essex"
+    },
+    {
+     "@type": "CollegeOrUniversity",
+     "name": "Marmara University"
+    }
+   ],
+   "worksFor": [
+    {
+     "@type": "Organization",
+     "name": "Gümüşhane University"
+    },
+    {
+     "@type": "Organization",
+     "name": "Ministry of National Education (Türkiye)"
+    }
+   ],
+   "memberOf": {
+    "@id": "https://kostaslab.github.io/#org"
+   }
+  },
+  {
+   "@type": "Person",
+   "@id": "https://kostaslab.github.io/people/rabia-yasa-kostas/#person",
+   "name": "Rabia Yasa Kostas",
+   "alternateName": [
+    "Rabia Yaşa Koştaş",
+    "Rabia Yaşa Kostas",
+    "Rabia Yasa"
+   ],
+   "honorificPrefix": "Dr.",
+   "jobTitle": "Lecturer, Department of Computer Technologies, Gümüşhane Vocational School, Gümüşhane University",
+   "url": "https://kostaslab.github.io/people/rabia-yasa-kostas/",
+   "image": "https://kostaslab.github.io/assets/img/rabia-yasa-kostas.jpg",
+   "email": "mailto:rabia.yasa@gumushane.edu.tr",
+   "sameAs": [
+    "https://orcid.org/0000-0003-4023-1850",
+    "https://github.com/rykostas",
+    "https://linkedin.com/in/rykostas",
+    "https://rabiayasakostas.com/"
+   ],
+   "knowsAbout": [
+    "Semantic analysis",
+    "Natural language processing",
+    "Machine learning",
+    "Explainable AI",
+    "Cognitive psychology",
+    "Verbal fluency",
+    "Human-computer interaction"
+   ],
+   "alumniOf": [
+    {
+     "@type": "CollegeOrUniversity",
+     "name": "University of Edinburgh"
+    },
+    {
+     "@type": "CollegeOrUniversity",
+     "name": "University of Essex"
+    },
+    {
+     "@type": "CollegeOrUniversity",
+     "name": "Marmara University"
+    }
+   ],
+   "worksFor": [
+    {
+     "@type": "Organization",
+     "name": "Gümüşhane University"
+    }
+   ],
+   "memberOf": {
+    "@id": "https://kostaslab.github.io/#org"
+   }
+  }
+ ]
+}</script></head>
+<body class="page-home">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/" aria-label="KOSTAS Lab — Home">
+      <img src="/assets/img/logo.png" alt="" width="36" height="35">
+      <span>KOSTAS<b>Lab</b></span>
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" class="nav" aria-label="Menu">
+      <a href="/#research">Research</a>
+      <a href="/#people">People</a>
+      <a href="/publications/">Publications</a>
+      <a href="/#projects">Projects</a>
+      <a href="/#news">News</a>
+      <a href="/#contact">Contact</a>
+      <a class="lang" href="/tr/" hreflang="tr" lang="tr" title="Bu sayfanın Türkçesi">Türkçe</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero">
+  <canvas class="hero-graph" aria-hidden="true"></canvas>
+  <div class="wrap hero-inner">
+    <h1 class="acrostic"><span class="sr-only">KOSTAS Lab: </span>
+      <span class="ac-row" style="--i:0"><b>K</b>nowledge-</span>
+      <span class="ac-row" style="--i:1"><b>O</b>riented</span>
+      <span class="ac-row" style="--i:2"><b>S</b>ystems for</span>
+      <span class="ac-row" style="--i:3"><b>T</b>echnology,</span>
+      <span class="ac-row" style="--i:4"><b>A</b>I and</span>
+      <span class="ac-row" style="--i:5"><b>S</b>cience</span>
+    </h1>
+    <div class="hero-side">
+      <p class="hero-lede">An independent research lab building machine learning that holds up outside the lab — in IoT networks, in Turkish language data and in the buildings we move through.</p>
+      <p class="hero-actions">
+        <a class="btn btn-primary" href="/publications/">Browse publications</a>
+        <a class="btn" href="#people">Meet the team</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section about" aria-labelledby="about-h">
+  <div class="wrap about-grid">
+    <h2 id="about-h" class="h2">What we work on</h2>
+    <div class="prose">
+<p>We are two researchers who trained at Edinburgh and now work in Türkiye. Most machine-learning results look strong on the dataset they were built on and fall apart on the next one; our shared interest is in models that generalise — to new devices, new networks, new speakers and new buildings.</p><p>We publish our code with our papers, test our methods on data we did not design them for, and care about methods that work for Turkish as well as English.</p>      <p class="context-note">KOSTAS Lab was founded in 2026. The publications and tools listed here were produced earlier by its members with their co-authors at Heriot-Watt University, the University of Edinburgh, Huawei UK and other institutions; each one is labelled with where the work was done.</p>
+      <p class="independence">KOSTAS Lab is an independent research group run by its two founders. It is not a legal entity and not a unit of any university or public institution; each member&#39;s institutional affiliation is listed on their profile.</p>
+    </div>
+    <dl class="facts">
+      <div><dt>15</dt><dd>publications by members</dd></div>
+      <div><dt>5</dt><dd>of them in Q1 journals</dd></div>
+      <div><dt>9</dt><dd>papers with open code</dd></div>
+      <div><dt>2026</dt><dd>KOSTAS Lab founded</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="section" id="research" aria-labelledby="research-h">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="research-h" class="h2">Research themes</h2>
+      <p class="lead">Five lines of work. Most build on research we did before founding the lab; each links to its papers.</p>
     </header>
+    <ul class="themes">
+      <li class="theme theme-iot">
+        <h3>Generalisable IoT security</h3>
+        <p>Identifying devices and detecting attacks from network behaviour, with models that keep working on devices, datasets and network conditions they were not trained on. Builds on IoTDevID, IoTGeM and GeMID, developed during Kahraman&#39;s PhD at Heriot-Watt University with Dr. Mike Just and Dr. Michael A. Lones.</p>
+        <p class="kw">device identification, intrusion detection, feature generalisation, network forensics</p>
+        <a class="theme-count" href="/publications/?topic=iot">6 papers</a>
+      </li>
+      <li class="theme theme-nlp">
+        <h3>Turkish NLP and offline LLMs</h3>
+        <p>Evaluating what locally run language models can and cannot do in Turkish, from everyday questions to logical fallacy detection, with co-authors Edibe Yılmaz, İnanç Feridun Canci and Zeynep Gizem Emir Shahbazov. Related student work includes TurkCap, a TÜBİTAK 2209-A project at Gümüşhane University.</p>
+        <p class="kw">LLM evaluation, reasoning, fallacy detection, image captioning</p>
+        <a class="theme-count" href="/publications/?topic=nlp">3 papers</a>
+      </li>
+      <li class="theme theme-cognition">
+        <h3>Cognitive language analytics</h3>
+        <p>Computational analysis of semantic verbal fluency (automatically finding clusters and switches in the words people produce) to support cognitive and clinical assessment for Turkish speakers. Builds on Rabia&#39;s PhD at the University of Edinburgh and work with Dr. Maria K. Wolters and Dr. Sarah E. MacPherson.</p>
+        <p class="kw">verbal fluency, semantic similarity, explainable AI, HCI</p>
+        <a class="theme-count" href="/publications/?topic=cognition">2 papers</a>
+      </li>
+      <li class="theme theme-positioning">
+        <h3>Indoor positioning</h3>
+        <p>Locating people and devices where GPS fails, using only WiFi signals. Started with WiFi distance estimation alongside Huawei UK&#39;s indoor positioning team (IPIN 2022) and continued with the founders&#39; graph-based floor separation (IPIN 2025).</p>
+        <p class="kw">WiFi fingerprinting, graph embeddings, floor detection</p>
+        <a class="theme-count" href="/publications/?topic=positioning">2 papers</a>
+      </li>
+      <li class="theme theme-materials">
+        <h3>AI for materials and nanobiotechnology</h3>
+        <p>Interdisciplinary book chapters with Pinar Bozbeyoglu, Elif Esra Altuner and Muzaffer Elmas on AI-driven design of nanocomposites, targeted antibiotic delivery and fuel desulfurisation.</p>
+        <p class="kw">inverse design, nanocomposites, antimicrobial resistance</p>
+        <a class="theme-count" href="/publications/?topic=materials">3 papers</a>
+      </li>
+    </ul>
+  </div>
+</section>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h2>KOSTAS Lab</h2>
-                <p>We develop Knowledge-Oriented Systems for Technology, AI, and Science. We are building the technologies of the future, today.</p>
-                <a href="#about" class="cta-button">SOON</a>
-            </div>
+<section class="section people-sec" id="people" aria-labelledby="people-h">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="people-h" class="h2">People</h2>
+      <p class="lead">The lab is currently two researchers. We are open to students and collaborators.</p>
+    </header>
+    <div class="people">
+      <article class="person-card">
+        <a href="/people/kahraman-kostas/" class="person-photo" tabindex="-1" aria-hidden="true">
+          <picture>
+            <source srcset="/assets/img/kahraman-kostas.webp" type="image/webp">
+            <img src="/assets/img/kahraman-kostas.jpg" alt="" width="640" height="800" loading="lazy">
+          </picture>
+        </a>
+        <div class="person-body">
+          <h3><a href="/people/kahraman-kostas/">Dr. Kahraman Kostas</a></h3>
+          <p class="role">Co-founder · Researcher &amp; Technical Architect</p>
+          <p>Builds machine-learning models for IoT security that keep working on devices and networks they have never seen.</p>
+          <p class="pos">National Education Expert (YYEGM, Ministry of National Education) and Instructor at Gümüşhane University</p>
+          <a class="more" href="/people/kahraman-kostas/">Full profile</a>
         </div>
-    </section>
+      </article>
+      <article class="person-card">
+        <a href="/people/rabia-yasa-kostas/" class="person-photo" tabindex="-1" aria-hidden="true">
+          <picture>
+            <source srcset="/assets/img/rabia-yasa-kostas.webp" type="image/webp">
+            <img src="/assets/img/rabia-yasa-kostas.jpg" alt="" width="640" height="800" loading="lazy">
+          </picture>
+        </a>
+        <div class="person-body">
+          <h3><a href="/people/rabia-yasa-kostas/">Dr. Rabia Yasa Kostas</a></h3>
+          <p class="role">Co-founder · Lecturer &amp; Researcher</p>
+          <p>Uses natural language processing to measure how people retrieve words, starting with Turkish verbal fluency.</p>
+          <p class="pos">Lecturer, Department of Computer Technologies, Gümüşhane Vocational School, Gümüşhane University</p>
+          <a class="more" href="/people/rabia-yasa-kostas/">Full profile</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
-    
-</body>
+<section class="section" id="publications" aria-labelledby="pubs-h">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="pubs-h" class="h2">Selected publications</h2>
+      <a class="more" href="/publications/">All publications (15)</a>
+    </header>
+    <ol class="pubs">
+<li class="pub" id="kostas2025gemid" data-year="2025" data-type="journal" data-members="kahraman rabia" data-topics="iot" data-origin="hw">
+  <p class="pub-meta">
+    <span class="tag tag-journal">Journal article</span>
+<span class="tag tag-q1" title="Q1">Q1</span><span class="pub-year">2025</span>    <span class="origin origin-hw" title="Where the work was done">Heriot-Watt University</span>
+  </p>
+  <h3 class="pub-title"><a href="https://doi.org/10.1016/j.iot.2025.101806" rel="noopener">GeMID: Generalizable Models for IoT Device Identification</a></h3>
+  <p class="pub-authors"><a class="me" href="/people/kahraman-kostas/">Kahraman Kostas</a>, <a class="me" href="/people/rabia-yasa-kostas/">Rabia Yasa Kostas</a>, Mike Just, Michael A. Lones</p>
+  <p class="pub-venue">Internet of Things (Elsevier), Vol. 30</p>
+  <div class="pub-actions">
+<a class="chip" href="https://doi.org/10.1016/j.iot.2025.101806" rel="noopener">DOI</a><a class="chip" href="https://arxiv.org/abs/2411.14441" rel="noopener">arXiv</a><a class="chip" href="https://github.com/kahramankostas/GeMID" rel="noopener">Code</a>    <details class="cite">
+      <summary class="chip">Cite</summary>
+      <div class="cite-box">
+        <pre><code>@article{kostas2025gemid,
+  title = {{GeMID: Generalizable Models for IoT Device Identification}},
+  author = {Kahraman Kostas and Rabia Yasa Kostas and Mike Just and Michael A. Lones},
+  journal = {Internet of Things (Elsevier), Vol. 30},
+  year = {2025},
+  doi = {10.1016/j.iot.2025.101806}
+}</code></pre>
+        <button type="button" class="copy-btn" data-copy-label="Copied">Copy BibTeX</button>
+      </div>
+    </details>
+  </div>
+</li>
+<li class="pub" id="kostas2025iotgem" data-year="2025" data-type="journal" data-members="kahraman" data-topics="iot" data-origin="hw">
+  <p class="pub-meta">
+    <span class="tag tag-journal">Journal article</span>
+<span class="tag tag-q1" title="Q1">Q1</span><span class="pub-year">2025</span>    <span class="origin origin-hw" title="Where the work was done">Heriot-Watt University</span>
+  </p>
+  <h3 class="pub-title"><a href="https://doi.org/10.1016/j.comnet.2025.111550" rel="noopener">IoTGeM: Generalisable Models for Behaviour-Based IoT Attack Detection</a></h3>
+  <p class="pub-authors"><a class="me" href="/people/kahraman-kostas/">Kahraman Kostas</a>, Mike Just, Michael A. Lones</p>
+  <p class="pub-venue">Computer Networks (Elsevier), Vol. 262</p>
+  <div class="pub-actions">
+<a class="chip" href="https://doi.org/10.1016/j.comnet.2025.111550" rel="noopener">DOI</a><a class="chip" href="https://github.com/kahramankostas/IoTGeM" rel="noopener">Code</a>    <details class="cite">
+      <summary class="chip">Cite</summary>
+      <div class="cite-box">
+        <pre><code>@article{kostas2025iotgem,
+  title = {{IoTGeM: Generalisable Models for Behaviour-Based IoT Attack Detection}},
+  author = {Kahraman Kostas and Mike Just and Michael A. Lones},
+  journal = {Computer Networks (Elsevier), Vol. 262},
+  year = {2025},
+  doi = {10.1016/j.comnet.2025.111550}
+}</code></pre>
+        <button type="button" class="copy-btn" data-copy-label="Copied">Copy BibTeX</button>
+      </div>
+    </details>
+  </div>
+</li>
+<li class="pub" id="kostas2025ipf" data-year="2025" data-type="journal" data-members="kahraman" data-topics="iot" data-origin="hw">
+  <p class="pub-meta">
+    <span class="tag tag-journal">Journal article</span>
+<span class="tag tag-q1" title="Q1">Q1</span><span class="pub-year">2025</span>    <span class="origin origin-hw" title="Where the work was done">Heriot-Watt University</span>
+  </p>
+  <h3 class="pub-title"><a href="https://ieeexplore.ieee.org/abstract/document/10824899" rel="noopener">Individual Packet Features are a Risk to Model Generalisation in ML-Based Intrusion Detection</a></h3>
+  <p class="pub-authors"><a class="me" href="/people/kahraman-kostas/">Kahraman Kostas</a>, Mike Just, Michael A. Lones</p>
+  <p class="pub-venue">IEEE Networking Letters</p>
+  <div class="pub-actions">
+<a class="chip" href="https://ieeexplore.ieee.org/abstract/document/10824899" rel="noopener">IEEE Xplore</a><a class="chip" href="https://github.com/kahramankostas/IPF" rel="noopener">Code</a>    <details class="cite">
+      <summary class="chip">Cite</summary>
+      <div class="cite-box">
+        <pre><code>@article{kostas2025ipf,
+  title = {{Individual Packet Features are a Risk to Model Generalisation in ML-Based Intrusion Detection}},
+  author = {Kahraman Kostas and Mike Just and Michael A. Lones},
+  journal = {IEEE Networking Letters},
+  year = {2025},
+  url = {https://ieeexplore.ieee.org/abstract/document/10824899}
+}</code></pre>
+        <button type="button" class="copy-btn" data-copy-label="Copied">Copy BibTeX</button>
+      </div>
+    </details>
+  </div>
+</li>
+<li class="pub" id="kostas2025floor" data-year="2025" data-type="conference" data-members="rabia kahraman" data-topics="positioning" data-origin="lab">
+  <p class="pub-meta">
+    <span class="tag tag-conference">Conference paper</span>
+<span class="pub-year">2025</span>    <span class="origin origin-lab" title="Where the work was done">KOSTAS Lab</span>
+  </p>
+  <h3 class="pub-title"><a href="https://arxiv.org/abs/2505.08088" rel="noopener">Graph-Based Floor Separation Using Node Embeddings and Clustering of WiFi Trajectories</a></h3>
+  <p class="pub-authors"><a class="me" href="/people/rabia-yasa-kostas/">Rabia Yasa Kostas</a>, <a class="me" href="/people/kahraman-kostas/">Kahraman Kostas</a></p>
+  <p class="pub-venue">preprint</p>
+  <div class="pub-actions">
+<a class="chip" href="https://arxiv.org/abs/2505.08088" rel="noopener">arXiv</a><a class="chip" href="https://github.com/kahramankostas/IPIN2025" rel="noopener">Code</a>    <details class="cite">
+      <summary class="chip">Cite</summary>
+      <div class="cite-box">
+        <pre><code>@inproceedings{kostas2025floor,
+  title = {{Graph-Based Floor Separation Using Node Embeddings and Clustering of WiFi Trajectories}},
+  author = {Rabia Yasa Kostas and Kahraman Kostas},
+  booktitle = {preprint},
+  year = {2025},
+  url = {https://arxiv.org/abs/2505.08088}
+}</code></pre>
+        <button type="button" class="copy-btn" data-copy-label="Copied">Copy BibTeX</button>
+      </div>
+    </details>
+  </div>
+</li>
+<li class="pub" id="kostas2024svf" data-year="2024" data-type="journal" data-members="rabia kahraman" data-topics="cognition nlp" data-origin="ed">
+  <p class="pub-meta">
+    <span class="tag tag-journal">Journal article</span>
+<span class="tag tag-q1" title="Q1">Q1</span><span class="pub-year">2024</span>    <span class="origin origin-ed" title="Where the work was done">University of Edinburgh</span>
+  </p>
+  <h3 class="pub-title"><a href="https://doi.org/10.1080/13803395.2024.2331827" rel="noopener">Semantic verbal fluency in native speakers of Turkish: A systematic review of category use, scoring metrics and normative data in healthy individuals</a></h3>
+  <p class="pub-authors"><a class="me" href="/people/rabia-yasa-kostas/">Rabia Yasa Kostas</a>, <a class="me" href="/people/kahraman-kostas/">Kahraman Kostas</a>, Sarah E. MacPherson, Maria K. Wolters</p>
+  <p class="pub-venue">Journal of Clinical and Experimental Neuropsychology, 46(4), 319–336</p>
+  <div class="pub-actions">
+<a class="chip" href="https://doi.org/10.1080/13803395.2024.2331827" rel="noopener">DOI</a>    <details class="cite">
+      <summary class="chip">Cite</summary>
+      <div class="cite-box">
+        <pre><code>@article{kostas2024svf,
+  title = {{Semantic verbal fluency in native speakers of Turkish: A systematic review of category use, scoring metrics and normative data in healthy individuals}},
+  author = {Rabia Yasa Kostas and Kahraman Kostas and Sarah E. MacPherson and Maria K. Wolters},
+  journal = {Journal of Clinical and Experimental Neuropsychology, 46(4), 319–336},
+  year = {2024},
+  doi = {10.1080/13803395.2024.2331827}
+}</code></pre>
+        <button type="button" class="copy-btn" data-copy-label="Copied">Copy BibTeX</button>
+      </div>
+    </details>
+  </div>
+</li>
+    </ol>
+  </div>
+</section>
 
+<section class="section" id="projects" aria-labelledby="projects-h">
+  <div class="wrap">
+    <header class="section-head"><h2 id="projects-h" class="h2">Projects and open-source tools</h2><p class="lead">Tools and projects by lab members. Each one shows where it was developed.</p></header>
+    <ul class="projects">
+      <li class="project">
+        <p class="project-kind">Open source</p><p class="project-origin"><span class="origin origin-hw" title="Where the work was done">Heriot-Watt University</span></p>        <h3>IoTDevID</h3>
+        <p>Behaviour-based IoT device identification from individual packets, including non-IP and low-energy protocols. From Kahraman&#39;s PhD, with Dr. Mike Just and Dr. Michael A. Lones.</p>
+<p class="project-links"><a class="chip" href="https://github.com/kahramankostas/IoTDevIDv2" rel="noopener">Code</a><a class="chip" href="https://doi.org/10.1109/JIOT.2022.3191951" rel="noopener">Paper</a></p>      </li>
+      <li class="project">
+        <p class="project-kind">Open source</p><p class="project-origin"><span class="origin origin-hw" title="Where the work was done">Heriot-Watt University</span></p>        <h3>IoTGeM</h3>
+        <p>Behaviour-based attack detection for IoT with a leakage-free evaluation pipeline. With Dr. Mike Just and Dr. Michael A. Lones.</p>
+<p class="project-links"><a class="chip" href="https://github.com/kahramankostas/IoTGeM" rel="noopener">Code</a><a class="chip" href="https://doi.org/10.1016/j.comnet.2025.111550" rel="noopener">Paper</a></p>      </li>
+      <li class="project">
+        <p class="project-kind">Open source</p><p class="project-origin"><span class="origin origin-hw" title="Where the work was done">Heriot-Watt University</span></p>        <h3>GeMID</h3>
+        <p>Device identification models selected for how well they generalise to unseen networks, not just held-out data. With Dr. Mike Just and Dr. Michael A. Lones.</p>
+<p class="project-links"><a class="chip" href="https://github.com/kahramankostas/GeMID" rel="noopener">Code</a><a class="chip" href="https://doi.org/10.1016/j.iot.2025.101806" rel="noopener">Paper</a></p>      </li>
+      <li class="project">
+        <p class="project-kind">Open source</p><p class="project-origin"><span class="origin origin-ed" title="Where the work was done">University of Edinburgh</span></p>        <h3>Turkish Verbal Fluency Analysis</h3>
+        <p>Automatic detection of semantic clusters and switches in Turkish verbal fluency data, developed during Rabia&#39;s PhD (Python, scikit-learn).</p>
+<p class="project-links"><a class="chip" href="https://rabiayasakostas.com/projects/turkish-verbal-fluency-analysis" rel="noopener">Project</a></p>      </li>
+      <li class="project">
+        <p class="project-kind">Open source</p><p class="project-origin"><span class="origin origin-lab" title="Where the work was done">KOSTAS Lab</span></p>        <h3>Floor separation</h3>
+        <p>Unsupervised floor separation from WiFi trajectories with Node2Vec embeddings and clustering.</p>
+<p class="project-links"><a class="chip" href="https://github.com/kahramankostas/IPIN2025" rel="noopener">Code</a><a class="chip" href="https://arxiv.org/abs/2505.08088" rel="noopener">Paper</a></p>      </li>
+      <li class="project">
+        <p class="project-kind">Open source</p><p class="project-origin"><span class="origin origin-collab" title="Where the work was done">External collaboration</span></p>        <h3>TRfallacy</h3>
+        <p>A benchmark for measuring logical reasoning in Turkish offline language models via fallacy detection, with İnanç Feridun Canci, Zeynep Gizem Emir Shahbazov and Edibe Yılmaz.</p>
+<p class="project-links"><a class="chip" href="https://github.com/kahramankostas/TRfallacy/" rel="noopener">Code</a></p>      </li>
+      <li class="project">
+        <p class="project-kind">Funded project, TÜBİTAK 2209-A</p><p class="project-origin"><span class="origin origin-gumushane" title="Where the work was done">Gümüşhane University</span></p>        <h3>TurkCap</h3>
+        <p>Culturally aware Turkish image captioning: an undergraduate research project by Hasan Hüseyin Keskin at Gümüşhane University, supervised by Dr. Rabia Yaşa Koştaş (2025, ongoing).</p>
+      </li>
+    </ul>
+  </div>
+</section>
 
+<section class="section" id="news" aria-labelledby="news-h">
+  <div class="wrap news-grid">
+    <div><h2 id="news-h" class="h2">News</h2><p class="news-lead">News from lab members, including work done before the lab was founded.</p></div>
+    <ol class="timeline">
+      <li><time datetime="2026-11">Nov 2026</time>
+        <p>KOSTAS Lab founded and website launched.</p></li>
+      <li><time datetime="2026-10">Oct 2026</time>
+        <p><a href="https://arxiv.org/abs/2307.08679" rel="noopener">Kahraman presented “Externally Validating the IoTDevID Device Identification Methodology”, with Mike Just and Michael A. Lones (Heriot-Watt University), at SINCONF 2026.</a></p></li>
+      <li><time datetime="2026-04">Apr 2026</time>
+        <p><a href="https://icada.com.tr/en/" rel="noopener">Kahraman and co-authors presented three papers on IoT device identification and Turkish offline LLMs at ICADA 2026.</a></p></li>
+      <li><time datetime="2026">2026</time>
+        <p>Rabia and co-authors Pinar Bozbeyoglu, Elif Esra Altuner and Muzaffer Elmas published three book chapters on AI for nanomaterials and nanobiotechnology with IGI Global.</p></li>
+      <li><time datetime="2025-10">Oct 2025</time>
+        <p><a href="https://doi.org/10.1016/j.iot.2025.101806" rel="noopener">GeMID, building on Kahraman&#39;s PhD at Heriot-Watt University (with Rabia, Mike Just and Michael A. Lones), accepted in Elsevier Internet of Things (Q1).</a></p></li>
+      <li><time datetime="2025-07">Jul 2025</time>
+        <p><a href="https://doi.org/10.1016/j.comnet.2025.111550" rel="noopener">IoTGeM, from Kahraman&#39;s PhD research at Heriot-Watt University with Mike Just and Michael A. Lones, accepted in Computer Networks (Q1).</a></p></li>
+      <li><time datetime="2025-06">Jun 2025</time>
+        <p><a href="https://arxiv.org/abs/2505.08088" rel="noopener">Rabia and Kahraman&#39;s paper on graph-based floor separation accepted at IPIN 2025.</a></p></li>
+      <li><time datetime="2025-01">Jan 2025</time>
+        <p><a href="https://ieeexplore.ieee.org/abstract/document/10824899" rel="noopener">“Individual Packet Features are a Risk to Model Generalisation”, by Kahraman, Mike Just and Michael A. Lones (Heriot-Watt University), accepted in IEEE Networking Letters.</a></p></li>
+      <li><time datetime="2024-10">Oct 2024</time>
+        <p>Rabia joined Gümüşhane University as a lecturer.</p></li>
+      <li><time datetime="2024-09">Sep 2024</time>
+        <p>Kahraman started as National Education Expert at YYEGM.</p></li>
+      <li><time datetime="2024">2024</time>
+        <p>Rabia completed her PhD in Informatics at the University of Edinburgh.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section collab" id="collaborators" aria-labelledby="collab-h">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="collab-h" class="h2">Collaborators and previous institutions</h2>
+      <p class="lead">Most of the work on this site was done with these people and at these institutions. Listing them here is a credit, not a claim of partnership.</p>
+    </header>
+    <ul class="collab-list">
+      <li>
+        <h3>Heriot-Watt University, Edinburgh</h3>
+        <p class="collab-context">Kahraman&#39;s PhD in Computer Science: IoTDevID, IoTGeM, GeMID and related papers.</p>
+        <p class="collab-people"><a href="https://researchportal.hw.ac.uk/en/persons/mike-just/" rel="noopener">Dr. Mike Just</a> <span class="collab-role">(PhD supervisor)</span>, <a href="https://www.macs.hw.ac.uk/~ml355/" rel="noopener">Dr. Michael A. Lones</a> <span class="collab-role">(PhD supervisor)</span></p>
+      </li>
+      <li>
+        <h3>University of Edinburgh</h3>
+        <p class="collab-context">Rabia&#39;s PhD in Informatics: Turkish semantic verbal fluency, and work on multi-user smart speakers.</p>
+        <p class="collab-people">Dr. Maria K. Wolters, Dr. Sarah E. MacPherson, Dr. Kami Vaniea, Nicole Meng-Schneider</p>
+      </li>
+      <li>
+        <h3>Huawei UK R&amp;D Centre, Edinburgh</h3>
+        <p class="collab-context">Kahraman&#39;s research role and Rabia&#39;s internship; WiFi-based distance estimation (IPIN 2022). Only published work is listed on this site.</p>
+        <p class="collab-people">Francisco Zampella, Firas Alsehly</p>
+      </li>
+      <li>
+        <h3>Gümüşhane University</h3>
+        <p class="collab-context">Rabia&#39;s and Kahraman&#39;s current teaching; TÜBİTAK 2209-A undergraduate projects supervised by Rabia.</p>
+        <p class="collab-people">Hasan Hüseyin Keskin <span class="collab-role">(TurkCap, TÜBİTAK 2209-A)</span>, Hüseyin Tunç <span class="collab-role">(TÜBİTAK 2209-A)</span></p>
+      </li>
+      <li>
+        <h3>Other co-authors</h3>
+        <p class="collab-context">Turkish offline LLM evaluation (ICADA 2026) and AI for nanomaterials (IGI Global, 2026).</p>
+        <p class="collab-people">Edibe Yılmaz, İnanç Feridun Canci, Zeynep Gizem Emir Shahbazov, Pinar Bozbeyoglu, Elif Esra Altuner, Muzaffer Elmas</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section contact" id="contact" aria-labelledby="contact-h">
+  <div class="wrap contact-grid">
+    <div>
+      <h2 id="contact-h" class="h2">Work with us</h2>
+      <p class="lead">We welcome collaborations, visiting students and joint proposals in IoT security, applied machine learning, Turkish NLP and indoor positioning. Write to either of us.</p>
+    </div>
+    <ul class="contact-list">
+      <li>
+        <span class="c-name">Dr. Kahraman Kostas</span>
+        <a href="mailto:kahramankostas@gmail.com">kahramankostas@gmail.com</a>
+        <button type="button" class="copy-btn small" data-copy="kahramankostas@gmail.com" data-copy-label="Copied">Copy</button>
+      </li>
+      <li>
+        <span class="c-name">Dr. Rabia Yasa Kostas</span>
+        <a href="mailto:rabia.yasa@gumushane.edu.tr">rabia.yasa@gumushane.edu.tr</a>
+        <button type="button" class="copy-btn small" data-copy="rabia.yasa@gumushane.edu.tr" data-copy-label="Copied">Copy</button>
+      </li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-brand"><img src="/assets/img/logo.png" alt="" width="28" height="27"> KOSTAS Lab</p>
+      <p>Knowledge-Oriented Systems for Technology, AI and Science.</p>
+      <p>Gümüşhane, Türkiye</p>
+    </div>
+    <ul class="footer-links">
+<li><a href="/people/kahraman-kostas/">Dr. Kahraman Kostas</a></li><li><a href="/people/rabia-yasa-kostas/">Dr. Rabia Yasa Kostas</a></li>      <li><a href="/publications/">Publications</a></li>
+      <li><a href="/tr/" hreflang="tr" lang="tr">Türkçe</a></li>
+    </ul>
+    <p class="copy">© 2026 KOSTAS Lab</p>
+  </div>
+</footer>
+<script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/graph.js" defer></script></body>
 </html>
