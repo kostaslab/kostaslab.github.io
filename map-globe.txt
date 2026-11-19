@@ -1,0 +1,4 @@
+<!-- Analytics -->
+<div style="display: flex; justify-content: center; align-items: center; width: 100%; text-align: center; margin: 0 auto;">
+<script src="https://revolvermaps2.com/embed.js" data-site="3eq489jcdzpy" data-size="300" data-theme="night" data-color="ffb23f" async></script>
+</div>
